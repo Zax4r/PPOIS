@@ -13,10 +13,10 @@
 \item 
 std\+::pair$<$ Point, Point $>$ \mbox{\hyperlink{class_vector_a76511613d0ad68ec1d74b071dcd91f06}{get\+Point}} ()
 \begin{DoxyCompactList}\small\item\em \doxylink{class_vector_a76511613d0ad68ec1d74b071dcd91f06}{get\+Point()} method \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{class_vector_ae1579f9e2ccb8aa4d39a1135870aed76}{get\+Length}} ()
-\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_ae1579f9e2ccb8aa4d39a1135870aed76}{get\+Length()} method \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_vector_a900f88848b433686d0f47b86b1b7084a}{get\+Length}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_a900f88848b433686d0f47b86b1b7084a}{get\+Length()} method \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+}} (\mbox{\hyperlink{class_vector}{Vector}} \&other)
-\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+()} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+(\+Vector\& other)} \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_a49238ad57e7f5666ee0f3630212b11f3}{operator+=}} (\mbox{\hyperlink{class_vector}{Vector}} \&other)
 \begin{DoxyCompactList}\small\item\em operator+= \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_a98a7acaf446a811da996094027fd35a7}{operator\texorpdfstring{$\ast$}{*}}} (int numb)
@@ -24,9 +24,9 @@ size\+\_\+t \mbox{\hyperlink{class_vector_ae1579f9e2ccb8aa4d39a1135870aed76}{get
 \mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_ad0ec7784e5a3c48f28762944421fa457}{operator\texorpdfstring{$\ast$}{*}=}} (int numb)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_vector_ad0ec7784e5a3c48f28762944421fa457}{operator\texorpdfstring{$\ast$}{*}=(int numb)} \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/}} (\mbox{\hyperlink{class_vector}{Vector}} \&other)
-\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/()} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/(\+Vector\& other)} \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_acdf770ac66203b4f00dc17b38db92d17}{operator-\/=}} (\mbox{\hyperlink{class_vector}{Vector}} \&other)
-\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_acdf770ac66203b4f00dc17b38db92d17}{operator-\/=()} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_acdf770ac66203b4f00dc17b38db92d17}{operator-\/=(\+Vector\& other)} \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_vector_a34995e8778c190bbefc9b1d433254f8b}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{class_vector}{Vector}} \&other)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_vector_a34995e8778c190bbefc9b1d433254f8b}{operator\texorpdfstring{$\ast$}{*}(\+Vector\& other)} \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_vector_a208f9da0276342212bce10e3b0a6b4a0}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{class_vector}{Vector}} \&other)
@@ -100,15 +100,15 @@ copied vector
 
 
 \doxysubsection{Методы}
-\Hypertarget{class_vector_ae1579f9e2ccb8aa4d39a1135870aed76}\index{Vector@{Vector}!getLength@{getLength}}
+\Hypertarget{class_vector_a900f88848b433686d0f47b86b1b7084a}\index{Vector@{Vector}!getLength@{getLength}}
 \index{getLength@{getLength}!Vector@{Vector}}
 \doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
-{\footnotesize\ttfamily \label{class_vector_ae1579f9e2ccb8aa4d39a1135870aed76} 
-size\+\_\+t Vector\+::get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_vector_a900f88848b433686d0f47b86b1b7084a} 
+double Vector\+::get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-\doxylink{class_vector_ae1579f9e2ccb8aa4d39a1135870aed76}{get\+Length()} method 
+\doxylink{class_vector_a900f88848b433686d0f47b86b1b7084a}{get\+Length()} method 
 
 This method is needed to return a lentgh of \doxylink{class_vector}{Vector} \begin{DoxyReturn}{Возвращает}
 lentgh of \doxylink{class_vector}{Vector} 
@@ -197,7 +197,7 @@ same as a operator \texorpdfstring{$\ast$}{*}, but changes a current vector
 
 
 
-\doxylink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+()} 
+\doxylink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+(\+Vector\& other)} 
 
 \begin{DoxyReturn}{Возвращает}
 vector that starts from the same point as vector this, and is the result of the sum of two vectors 
@@ -216,7 +216,7 @@ operator+=
 same as a operator +, but changes a current vector 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{См. также}
-\doxylink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+()} 
+\doxylink{class_vector_a20b9109a1b4320e45744ee40803b3221}{operator+(\+Vector\& other)} 
 \end{DoxySeeAlso}
 \Hypertarget{class_vector_af32d933d95264a492f6d2d177e652244}\index{Vector@{Vector}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!Vector@{Vector}}
@@ -226,7 +226,7 @@ same as a operator +, but changes a current vector
 
 
 
-\doxylink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/()} 
+\doxylink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/(\+Vector\& other)} 
 
 \begin{DoxyReturn}{Возвращает}
 vector that starts from the same point as vector this, and is the result of the difference of two vectors 
@@ -239,13 +239,13 @@ vector that starts from the same point as vector this, and is the result of the 
 
 
 
-\doxylink{class_vector_acdf770ac66203b4f00dc17b38db92d17}{operator-\/=()} 
+\doxylink{class_vector_acdf770ac66203b4f00dc17b38db92d17}{operator-\/=(\+Vector\& other)} 
 
 \begin{DoxyReturn}{Возвращает}
 same as a operator -\/, but changes a current vector 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{См. также}
-\doxylink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/()} 
+\doxylink{class_vector_af32d933d95264a492f6d2d177e652244}{operator-\/(\+Vector\& other)} 
 \end{DoxySeeAlso}
 \Hypertarget{class_vector_a2f5f3e3862397ea54fea7a07d958fef5}\index{Vector@{Vector}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Vector@{Vector}}
