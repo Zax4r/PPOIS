@@ -1,3 +1,0 @@
-﻿  Vector.cpp
-C:\Users\user\Desktop\PPOIS(lab1)\PPOIS(lab1)\Vector.cpp(38,13): warning C4244: return: преобразование "double" в "size_t", возможна потеря данных
-  PPOIS(lab1).vcxproj -> C:\Users\user\Desktop\PPOIS(lab1)\x64\Debug\PPOIS(lab1).exe
