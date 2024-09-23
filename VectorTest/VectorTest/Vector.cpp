@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "Vector.h"
 
 Vector::Vector(int Ax, int Ay, int Bx, int By) :A(Ax, Ay), B(Bx, By)
@@ -114,4 +113,3 @@ std::ostream& operator<<(std::ostream& out, Vector& a)
 	out << "Start:" << a.A.X << a.A.Y << " End:" << a.B.X << a.B.Y;
 	return out;
 }
-
