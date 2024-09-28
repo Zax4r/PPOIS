@@ -110,6 +110,6 @@ Vector::Vector(const Vector& other) : A(other.A.X, other.A.Y), B(other.B.X, othe
 
 std::ostream& operator<<(std::ostream& out, Vector& a)
 {
-	out << "Start:" << a.A.X << a.A.Y << " End:" << a.B.X << a.B.Y;
+	out << "Start:(" << a.A.X <<','<< a.A.Y << ") End:(" << a.B.X <<','<< a.B.Y<<")";
 	return out;
 }
