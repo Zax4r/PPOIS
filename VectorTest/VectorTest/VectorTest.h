@@ -38,7 +38,6 @@ TEST(Vector_Test, TestVectorSumOperatorWithNeg) {
 TEST(Vector_Test, TestVectorSubtOperatorWithPos) {
 	Vector a(5, 2, 3, 4), b(5, 2, 3, 4),nulVec(0, 0, 0, 0);
 	EXPECT_EQ((a-b), nulVec);
-	EXPECT_TRUE(true);
 }
 
 TEST(Vector_Test, TestVectorSubtOperatorWithNeg) {
