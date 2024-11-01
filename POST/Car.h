@@ -1,23 +1,12 @@
 #pragma once
-#include<string>
-#include"PostWorker.h"
+#include <string>
 using namespace std;
 class Car
 {
 protected:
-	string name;
+	std::string name;
 public:
-	Car(const string& nam);
-	virtual string GetName();
-};
-
-class MailCar : public Car
-{
-private:
-	Driver driver;
-public:
-	MailCar(const string& nam, Driver& dr);
-	MailCar() :Car("unnamed_car") {};
-
+	Car(const std::string& nam);
+	virtual std::string GetName();
 };
 

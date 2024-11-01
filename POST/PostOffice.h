@@ -1,25 +1,5 @@
 #pragma once
-#include "Car.h"
-#include"Review.h"
-class Building
-{
-protected:
-	string address;
-public:
-	Building(string& addr);
-};
-
-
-class ResidentialBuilding :public Building
-{
-private:
-	vector<Client> residents;
-public:
-	ResidentialBuilding(string address) :Building(address) {};
-	void AddResident(Client a);
-	bool isLivingThere(Client& resident);
-};
-
+#include "ResidentialBuilding.h"
 class PostOffice:public Building
 {
 private:

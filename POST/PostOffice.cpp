@@ -1,19 +1,9 @@
 #include "PostOffice.h"
 
-Building::Building(string& addr)
-{
-	address = addr;
-}
-
 void PostOffice::AddReview(Client& nClient)
 {
 	string review = "REVIEW";
 	reviews.push_back(Review(review, nClient));
-	for (auto& a:clients)
-	{
-		if(a.GetName()==nClient.GetName()){return;}
-	}
-	clients.push_back(nClient);
 }
 
 void PostOffice::GiveAllItems()
@@ -80,20 +70,4 @@ vector<Client> PostOffice::GetClients()
 vector<SendItem*> PostOffice::GetItems()
 {
 	return items;
-}
-
-void ResidentialBuilding::AddResident(Client a)
-{
-	residents.push_back(a);
-}
-
-bool ResidentialBuilding::isLivingThere(Client& resident)
-{
-	bool isliving = false;
-	for (auto& liver : residents) {
-		isliving = liver.GetName() == resident.GetName();
-		if (isliving)
-			return true;
-	}
-	return false;
 }
