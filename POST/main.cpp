@@ -1,4 +1,10 @@
-#include "PostTest.h"
+#include "PostOfficeTest.h"
+#include "SendItemTest.h"
+#include "PostWorkerTest.h"
+#include "ClientTest.h"
+#include "CombinedTest.h"
+#include "LetterTest.h"
+#include "PackageTest.h"
 
 int main(int argc, char **argv)
 {

@@ -4,7 +4,13 @@ void PostOffice::AddReview(Client& nClient)
 {
 	string review = "REVIEW";
 	reviews.push_back(Review(review, nClient));
+	for (auto& a:clients)
+	{
+		if(a.GetName()==nClient.GetName()){return;}
+	}
+	clients.push_back(nClient);
 }
+
 
 void PostOffice::GiveAllItems()
 {
