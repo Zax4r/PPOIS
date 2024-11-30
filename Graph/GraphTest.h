@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 TEST(GraphTest, AddVertices) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
 
@@ -10,7 +10,7 @@ TEST(GraphTest, AddVertices) {
 }
 
 TEST(GraphTest, AddEdges) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.addVertex("B");
@@ -23,7 +23,7 @@ TEST(GraphTest, AddEdges) {
 }
 
 TEST(GraphTest, HasVertexT) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
 
@@ -31,14 +31,14 @@ TEST(GraphTest, HasVertexT) {
 }
 
 TEST(GraphTest, HasVertexF) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     EXPECT_FALSE(graph.hasVertex("E")); // Вершина "E" не должна существовать
 }
 
 TEST(GraphTest, HasEdgeF) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.addVertex("B");
@@ -48,7 +48,7 @@ TEST(GraphTest, HasEdgeF) {
 }
 
 TEST(GraphTest, HasEdgeT) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.addVertex("B");
@@ -58,7 +58,7 @@ TEST(GraphTest, HasEdgeT) {
 }
 
 TEST(GraphTest, RemoveVertex) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.removeVertex("A");
@@ -67,7 +67,7 @@ TEST(GraphTest, RemoveVertex) {
 }
 
 TEST(GraphTest, RemoveVertexWEdge) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.addVertex("B");
@@ -80,7 +80,7 @@ TEST(GraphTest, RemoveVertexWEdge) {
 }
 
 TEST(GraphTest, RemoveEdge) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.addVertex("B");
@@ -92,7 +92,7 @@ TEST(GraphTest, RemoveEdge) {
 }
 
 TEST(GraphTest, VertexDegree) {
-    Graph<std::string> graph;
+    Graph< string> graph;
 
     graph.addVertex("A");
     graph.addVertex("B");

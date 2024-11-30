@@ -12,11 +12,11 @@ template <typename T>
 class Graph {
 public:
     using VertexType = T;
-    using EdgeType = std::pair<int, int>; 
+    using EdgeType = pair<int, int>; 
 
 private:
-    std::vector<VertexType> vertices;           
-    std::vector<std::vector<int>> incMatrix;    
+     vector<VertexType> vertices;           
+     vector< vector<int>> incMatrix;    
     int edgeCount = 0;                        
 
 public:
@@ -39,7 +39,7 @@ public:
 
    
     bool hasVertex(const VertexType& vertex) const {
-        return std::find(vertices.begin(), vertices.end(), vertex) != vertices.end();
+        return  find(vertices.begin(), vertices.end(), vertex) != vertices.end();
     }
 
   
@@ -61,7 +61,7 @@ public:
         if ((idx1 ==-1 || idx2 == -1))
             return;
         
-            std::vector<int> newEdge(vertices.size(), 0);
+             vector<int> newEdge(vertices.size(), 0);
             newEdge[idx1] = 1;
             newEdge[idx2] = 1;
 
@@ -112,7 +112,7 @@ public:
 
         auto it = incMatrix.begin();
         while (it != incMatrix.end()) {
-            int sum = std::accumulate(it->begin(), it->end(), 0);
+            int sum =  accumulate(it->begin(), it->end(), 0);
             if (sum<2) {
                 it = incMatrix.erase(it);
                 --edgeCount;
@@ -138,11 +138,11 @@ public:
     }
 
     class VertexIterator {
-        typename std::vector<VertexType>::iterator it;
+        typename  vector<VertexType>::iterator it;
 
     public:
 
-        VertexIterator(typename std::vector<VertexType>::iterator it) : it(it) {}
+        VertexIterator(typename  vector<VertexType>::iterator it) : it(it) {}
 
         VertexIterator& operator++() {
             it++;
