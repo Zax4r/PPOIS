@@ -1,4 +1,4 @@
-#include "Graph.h"
+#include "EdgeIterator.h"
 #include <gtest/gtest.h>
 
 TEST(GraphTest, AddVertices) {
