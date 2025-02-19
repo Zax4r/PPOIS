@@ -4,4 +4,4 @@ class Teacher:
         self.__subj = subj
 
     def __str__(self):
-        return f"Преподователь f{self.__full_name}, ведущий предмет {self.__subj}"
+        return f"Преподователь {self.__full_name}, ведущий предмет {self.__subj}"

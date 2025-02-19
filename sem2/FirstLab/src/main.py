@@ -1,5 +1,8 @@
 from Interface import Interface
 from MyOwnException import MyOwnException
+from AdministrationTest import AdministrationTest
+from MarksTest import MarksTest
+import unittest
 import pickle
 
 FILE_NAME = r"C:\Users\user\Desktop\PPOIS\LAB1\FirstLab\src\SAVE.pkl"
@@ -26,4 +29,8 @@ def main():
             cycle = False
 
 if __name__ == '__main__':
-    main()
+    choice = int(input())
+    if choice == 1:
+        main()
+    else:
+        unittest.main()

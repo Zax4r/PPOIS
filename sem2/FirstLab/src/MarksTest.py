@@ -1,7 +1,7 @@
 import unittest
-from src.Marks import Marks
+from Marks import Marks
 
-class TestMarks(unittest.TestCase):
+class MarksTest(unittest.TestCase):
     def setUp(self):
         self.marks = Marks()
 
@@ -23,12 +23,9 @@ class TestMarks(unittest.TestCase):
 
 
     def test_marking_no_results(self):
-        output = self.marks.marking()  # Expect to handle no results
-        self.assertIsNone(output)  # No output but should not raise an error
+        output = self.marks.marking() 
+        self.assertIsNone(output)  
 
     def test_analytic_no_marks(self):
-        output = self.marks.analytic()  # Expect to handle no undone marks
-        self.assertIsNone(output)  # No output but should not raise an error
-
-if __name__ == '__main__':
-    unittest.main()
+        output = self.marks.analytic() 
+        self.assertIsNone(output) 

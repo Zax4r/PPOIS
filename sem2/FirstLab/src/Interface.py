@@ -2,7 +2,7 @@ from Student import Student
 from Teacher import Teacher
 from Tests import Tests
 from Feedback import Feedback
-from Administation import Administration
+from Administration import Administration
 from MyOwnException import MyOwnException
 from typing import List,Set,Tuple
 
@@ -15,7 +15,7 @@ class Interface:
         self.__tests = {}
 
     @property
-    def subjects(self) -> Set(str):
+    def subjects(self) -> Set[str]:
         return self.__subjects
 
     @property
@@ -45,11 +45,12 @@ class Interface:
               4. Операция обратной связи.\n\
               5. Операция администрирования системы.\n\
               6. Просмотреть статистику учащихся\n\
+              7. Просмотреть имеющихся преподавателей\n\
               0. Выход")
 
     def menu(self):
         self.show_menu()
-        choice = self.__validate_input(0, 6)
+        choice = self.__validate_input(0, 7)
         
         match choice:
 
@@ -67,6 +68,9 @@ class Interface:
                 self.administration_operation()
             case 6:
                 self.show_stats()
+            case 7:
+                self.show_teachers()
+
 
     def show_stats(self):
         for student in self.__students:
@@ -128,3 +132,7 @@ class Interface:
             self.__feedback.add_review()
         elif choice == 2:
             self.__feedback.show_reviews()
+
+    def show_teachers(self):
+        for teacher in self.__teachers:
+            print(teacher)

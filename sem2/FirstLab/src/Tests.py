@@ -17,4 +17,4 @@ class Tests:
 
     def start_test(self, students: List[Student]):
         for student in students:
-            student.testing(self.size, self.subject)
+            student.testing(self.__size, self.__subject)

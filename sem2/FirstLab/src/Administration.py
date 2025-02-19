@@ -1,7 +1,7 @@
 from Teacher import Teacher
 from Student import Student
 from Tests import Tests
-from typing import List,Set,Tuple
+from typing import List,Set,Tuple,Dict
 
 class Administration:
 
@@ -22,7 +22,7 @@ class Administration:
         return teachers
 
     @staticmethod
-    def add_test(tests: List[Tests],subjects: Set[str]) -> Tuple[List[Tests],Set[str]]:
+    def add_test(tests: Dict[str,List[Tests]],subjects: Set[str]) -> Tuple[List[Tests],Set[str]]:
         print("Введите предмет нового теста: ", end="")
         subject = input()
         if subject not in subjects:
