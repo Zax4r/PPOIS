@@ -1,0 +1,2 @@
+class MyOwnException(Exception):
+    pass
