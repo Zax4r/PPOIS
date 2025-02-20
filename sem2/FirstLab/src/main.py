@@ -29,8 +29,4 @@ def main():
             cycle = False
 
 if __name__ == '__main__':
-    choice = int(input())
-    if choice == 1:
-        main()
-    else:
-        unittest.main()
+    unittest.main()

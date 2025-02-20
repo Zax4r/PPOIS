@@ -80,5 +80,5 @@
 - `add_test` - нужен для добавления студента к массиву students.
 
 # Диаграммы 
-![classes.png](images/classes_src.png)
-![classes.png](images/packages_src.png)
+![classes.png](images/classes.png)
+![classes.png](images/states.png)
