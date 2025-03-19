@@ -1,7 +1,7 @@
 from view.GUIview import GUI
+from typing import Tuple
 import model.DB.StudentSQLite as db
 import model.XML.StudentXML as xml
-from typing import Tuple
 
 
 class Controller:

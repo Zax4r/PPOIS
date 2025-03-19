@@ -1,4 +1,4 @@
-from StudentController import Controller
+from  controller.StudentController import Controller
 
 if __name__=="__main__":
     app = Controller()
