@@ -1,0 +1,5 @@
+Faker==37.0.0
+greenlet==3.1.1
+lxml==5.3.1
+SQLAlchemy==2.0.38
+typing_extensions==4.12.2
