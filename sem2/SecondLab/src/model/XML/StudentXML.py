@@ -4,7 +4,7 @@ import xml.sax
 from faker import Faker
 from typing import List,Tuple
 from .MyStudent import MyStudent
-from MyHandler import MyHandler
+from .MyHandler import MyHandler
 
 class Model():
     def __init__(self,path:str):

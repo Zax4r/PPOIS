@@ -1,5 +1,5 @@
 import xml
-from MyStudent import MyStudent
+from .MyStudent import MyStudent
 
 
 class MyHandler(xml.sax.ContentHandler):

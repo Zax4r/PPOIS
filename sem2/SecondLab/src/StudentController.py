@@ -13,16 +13,21 @@ class Controller:
         self.deleted = 0
         self.find = 0
     
+    def show(self):
+        self.view.mainloop()
+    
     #Choosing model
     def choose_db(self):
         self.model = db.Student()
         self.curr_data = self.get_data()
+        self.current_page = 1
         self.total_pages = self.calculate_total_pages()
         self.update_view()
     
     def choose_xml(self,path):
         self.model = xml.Model(path)
         self.curr_data = self.get_data()
+        self.current_page = 1
         self.total_pages = self.calculate_total_pages()
         self.update_view()
 
@@ -134,8 +139,3 @@ class Controller:
         students = self.model.search_by_FIO(FIO)
         self.find +=len(students)
         self.view.show_find(students)
-    
-        
-if __name__ == "__main__":   
-    Contr = Controller()
-    Contr.view.mainloop()
