@@ -1,0 +1,753 @@
+<?xml version="1.0" ?>
+<students>
+	<student id="1">
+		<FIO>Kristina Martinez</FIO>
+		<group>2</group>
+		<semester_1>3</semester_1>
+		<semester_2>11</semester_2>
+		<semester_3>11</semester_3>
+		<semester_4>4</semester_4>
+		<semester_5>6</semester_5>
+		<semester_6>7</semester_6>
+		<semester_7>2</semester_7>
+		<semester_8>2</semester_8>
+		<semester_9>14</semester_9>
+		<semester_10>8</semester_10>
+		<total>68</total>
+	</student>
+	<student id="2">
+		<FIO>Daniel Davis</FIO>
+		<group>7</group>
+		<semester_1>13</semester_1>
+		<semester_2>13</semester_2>
+		<semester_3>14</semester_3>
+		<semester_4>13</semester_4>
+		<semester_5>13</semester_5>
+		<semester_6>8</semester_6>
+		<semester_7>10</semester_7>
+		<semester_8>5</semester_8>
+		<semester_9>7</semester_9>
+		<semester_10>3</semester_10>
+		<total>99</total>
+	</student>
+	<student id="3">
+		<FIO>Brian Williams</FIO>
+		<group>10</group>
+		<semester_1>9</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>9</semester_3>
+		<semester_4>4</semester_4>
+		<semester_5>8</semester_5>
+		<semester_6>14</semester_6>
+		<semester_7>4</semester_7>
+		<semester_8>2</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>7</semester_10>
+		<total>71</total>
+	</student>
+	<student id="4">
+		<FIO>Tyler Ingram</FIO>
+		<group>1</group>
+		<semester_1>3</semester_1>
+		<semester_2>7</semester_2>
+		<semester_3>2</semester_3>
+		<semester_4>7</semester_4>
+		<semester_5>14</semester_5>
+		<semester_6>7</semester_6>
+		<semester_7>8</semester_7>
+		<semester_8>11</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>10</semester_10>
+		<total>73</total>
+	</student>
+	<student id="5">
+		<FIO>Kevin Stevens</FIO>
+		<group>3</group>
+		<semester_1>11</semester_1>
+		<semester_2>3</semester_2>
+		<semester_3>8</semester_3>
+		<semester_4>2</semester_4>
+		<semester_5>7</semester_5>
+		<semester_6>14</semester_6>
+		<semester_7>5</semester_7>
+		<semester_8>10</semester_8>
+		<semester_9>13</semester_9>
+		<semester_10>9</semester_10>
+		<total>82</total>
+	</student>
+	<student id="6">
+		<FIO>Amanda George</FIO>
+		<group>5</group>
+		<semester_1>5</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>12</semester_3>
+		<semester_4>7</semester_4>
+		<semester_5>2</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>7</semester_7>
+		<semester_8>7</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>2</semester_10>
+		<total>67</total>
+	</student>
+	<student id="7">
+		<FIO>Jeffrey Wilson</FIO>
+		<group>1</group>
+		<semester_1>8</semester_1>
+		<semester_2>2</semester_2>
+		<semester_3>5</semester_3>
+		<semester_4>14</semester_4>
+		<semester_5>5</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>2</semester_7>
+		<semester_8>3</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>7</semester_10>
+		<total>60</total>
+	</student>
+	<student id="8">
+		<FIO>Deborah Lloyd</FIO>
+		<group>3</group>
+		<semester_1>1</semester_1>
+		<semester_2>8</semester_2>
+		<semester_3>5</semester_3>
+		<semester_4>11</semester_4>
+		<semester_5>13</semester_5>
+		<semester_6>11</semester_6>
+		<semester_7>12</semester_7>
+		<semester_8>7</semester_8>
+		<semester_9>1</semester_9>
+		<semester_10>2</semester_10>
+		<total>71</total>
+	</student>
+	<student id="9">
+		<FIO>Christopher Lloyd</FIO>
+		<group>6</group>
+		<semester_1>9</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>6</semester_4>
+		<semester_5>11</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>6</semester_7>
+		<semester_8>1</semester_8>
+		<semester_9>7</semester_9>
+		<semester_10>14</semester_10>
+		<total>83</total>
+	</student>
+	<student id="10">
+		<FIO>Steven Hendricks</FIO>
+		<group>1</group>
+		<semester_1>8</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>7</semester_3>
+		<semester_4>7</semester_4>
+		<semester_5>6</semester_5>
+		<semester_6>14</semester_6>
+		<semester_7>9</semester_7>
+		<semester_8>8</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>3</semester_10>
+		<total>75</total>
+	</student>
+	<student id="11">
+		<FIO>Robin Beard</FIO>
+		<group>5</group>
+		<semester_1>5</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>9</semester_3>
+		<semester_4>3</semester_4>
+		<semester_5>12</semester_5>
+		<semester_6>6</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>4</semester_8>
+		<semester_9>8</semester_9>
+		<semester_10>14</semester_10>
+		<total>85</total>
+	</student>
+	<student id="12">
+		<FIO>Nicole Norris</FIO>
+		<group>3</group>
+		<semester_1>6</semester_1>
+		<semester_2>12</semester_2>
+		<semester_3>1</semester_3>
+		<semester_4>6</semester_4>
+		<semester_5>3</semester_5>
+		<semester_6>9</semester_6>
+		<semester_7>5</semester_7>
+		<semester_8>3</semester_8>
+		<semester_9>1</semester_9>
+		<semester_10>10</semester_10>
+		<total>56</total>
+	</student>
+	<student id="13">
+		<FIO>Ray Robbins</FIO>
+		<group>5</group>
+		<semester_1>13</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>6</semester_3>
+		<semester_4>6</semester_4>
+		<semester_5>1</semester_5>
+		<semester_6>6</semester_6>
+		<semester_7>6</semester_7>
+		<semester_8>6</semester_8>
+		<semester_9>10</semester_9>
+		<semester_10>13</semester_10>
+		<total>77</total>
+	</student>
+	<student id="14">
+		<FIO>Karen Brown</FIO>
+		<group>6</group>
+		<semester_1>9</semester_1>
+		<semester_2>6</semester_2>
+		<semester_3>11</semester_3>
+		<semester_4>3</semester_4>
+		<semester_5>3</semester_5>
+		<semester_6>5</semester_6>
+		<semester_7>4</semester_7>
+		<semester_8>8</semester_8>
+		<semester_9>14</semester_9>
+		<semester_10>4</semester_10>
+		<total>67</total>
+	</student>
+	<student id="15">
+		<FIO>Maurice Huffman</FIO>
+		<group>5</group>
+		<semester_1>1</semester_1>
+		<semester_2>8</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>11</semester_4>
+		<semester_5>7</semester_5>
+		<semester_6>8</semester_6>
+		<semester_7>3</semester_7>
+		<semester_8>3</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>6</semester_10>
+		<total>63</total>
+	</student>
+	<student id="16">
+		<FIO>Jeffrey Pratt</FIO>
+		<group>5</group>
+		<semester_1>2</semester_1>
+		<semester_2>7</semester_2>
+		<semester_3>11</semester_3>
+		<semester_4>5</semester_4>
+		<semester_5>13</semester_5>
+		<semester_6>7</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>5</semester_8>
+		<semester_9>10</semester_9>
+		<semester_10>3</semester_10>
+		<total>77</total>
+	</student>
+	<student id="17">
+		<FIO>Dennis Murphy</FIO>
+		<group>3</group>
+		<semester_1>4</semester_1>
+		<semester_2>7</semester_2>
+		<semester_3>8</semester_3>
+		<semester_4>12</semester_4>
+		<semester_5>2</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>5</semester_7>
+		<semester_8>8</semester_8>
+		<semester_9>12</semester_9>
+		<semester_10>9</semester_10>
+		<total>79</total>
+	</student>
+	<student id="18">
+		<FIO>Jay Medina</FIO>
+		<group>5</group>
+		<semester_1>6</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>8</semester_3>
+		<semester_4>10</semester_4>
+		<semester_5>10</semester_5>
+		<semester_6>5</semester_6>
+		<semester_7>9</semester_7>
+		<semester_8>1</semester_8>
+		<semester_9>3</semester_9>
+		<semester_10>10</semester_10>
+		<total>72</total>
+	</student>
+	<student id="19">
+		<FIO>Robert Wheeler</FIO>
+		<group>6</group>
+		<semester_1>2</semester_1>
+		<semester_2>4</semester_2>
+		<semester_3>12</semester_3>
+		<semester_4>3</semester_4>
+		<semester_5>8</semester_5>
+		<semester_6>14</semester_6>
+		<semester_7>6</semester_7>
+		<semester_8>6</semester_8>
+		<semester_9>11</semester_9>
+		<semester_10>11</semester_10>
+		<total>77</total>
+	</student>
+	<student id="20">
+		<FIO>Paul Fisher</FIO>
+		<group>9</group>
+		<semester_1>10</semester_1>
+		<semester_2>14</semester_2>
+		<semester_3>14</semester_3>
+		<semester_4>10</semester_4>
+		<semester_5>8</semester_5>
+		<semester_6>8</semester_6>
+		<semester_7>13</semester_7>
+		<semester_8>14</semester_8>
+		<semester_9>14</semester_9>
+		<semester_10>1</semester_10>
+		<total>106</total>
+	</student>
+	<student id="21">
+		<FIO>Jennifer Pearson</FIO>
+		<group>10</group>
+		<semester_1>7</semester_1>
+		<semester_2>1</semester_2>
+		<semester_3>12</semester_3>
+		<semester_4>13</semester_4>
+		<semester_5>11</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>4</semester_7>
+		<semester_8>12</semester_8>
+		<semester_9>10</semester_9>
+		<semester_10>9</semester_10>
+		<total>89</total>
+	</student>
+	<student id="22">
+		<FIO>Sean Allen</FIO>
+		<group>10</group>
+		<semester_1>13</semester_1>
+		<semester_2>3</semester_2>
+		<semester_3>1</semester_3>
+		<semester_4>6</semester_4>
+		<semester_5>9</semester_5>
+		<semester_6>11</semester_6>
+		<semester_7>5</semester_7>
+		<semester_8>3</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>5</semester_10>
+		<total>62</total>
+	</student>
+	<student id="23">
+		<FIO>Tiffany Johnson</FIO>
+		<group>10</group>
+		<semester_1>11</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>9</semester_3>
+		<semester_4>4</semester_4>
+		<semester_5>8</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>5</semester_7>
+		<semester_8>2</semester_8>
+		<semester_9>10</semester_9>
+		<semester_10>11</semester_10>
+		<total>81</total>
+	</student>
+	<student id="24">
+		<FIO>Angela Nelson</FIO>
+		<group>2</group>
+		<semester_1>4</semester_1>
+		<semester_2>5</semester_2>
+		<semester_3>7</semester_3>
+		<semester_4>13</semester_4>
+		<semester_5>1</semester_5>
+		<semester_6>1</semester_6>
+		<semester_7>1</semester_7>
+		<semester_8>11</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>10</semester_10>
+		<total>59</total>
+	</student>
+	<student id="25">
+		<FIO>William Hurst</FIO>
+		<group>7</group>
+		<semester_1>13</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>9</semester_3>
+		<semester_4>8</semester_4>
+		<semester_5>7</semester_5>
+		<semester_6>8</semester_6>
+		<semester_7>3</semester_7>
+		<semester_8>4</semester_8>
+		<semester_9>5</semester_9>
+		<semester_10>1</semester_10>
+		<total>67</total>
+	</student>
+	<student id="26">
+		<FIO>Joshua Anderson</FIO>
+		<group>7</group>
+		<semester_1>6</semester_1>
+		<semester_2>14</semester_2>
+		<semester_3>7</semester_3>
+		<semester_4>12</semester_4>
+		<semester_5>5</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>3</semester_7>
+		<semester_8>9</semester_8>
+		<semester_9>8</semester_9>
+		<semester_10>1</semester_10>
+		<total>77</total>
+	</student>
+	<student id="27">
+		<FIO>Leah Henry DDS</FIO>
+		<group>2</group>
+		<semester_1>13</semester_1>
+		<semester_2>4</semester_2>
+		<semester_3>2</semester_3>
+		<semester_4>4</semester_4>
+		<semester_5>12</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>7</semester_7>
+		<semester_8>8</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>14</semester_10>
+		<total>80</total>
+	</student>
+	<student id="28">
+		<FIO>Leslie Johnson</FIO>
+		<group>7</group>
+		<semester_1>6</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>14</semester_3>
+		<semester_4>8</semester_4>
+		<semester_5>7</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>5</semester_7>
+		<semester_8>7</semester_8>
+		<semester_9>8</semester_9>
+		<semester_10>13</semester_10>
+		<total>89</total>
+	</student>
+	<student id="29">
+		<FIO>Jennifer Sims</FIO>
+		<group>4</group>
+		<semester_1>11</semester_1>
+		<semester_2>2</semester_2>
+		<semester_3>8</semester_3>
+		<semester_4>7</semester_4>
+		<semester_5>9</semester_5>
+		<semester_6>4</semester_6>
+		<semester_7>12</semester_7>
+		<semester_8>7</semester_8>
+		<semester_9>9</semester_9>
+		<semester_10>11</semester_10>
+		<total>80</total>
+	</student>
+	<student id="30">
+		<FIO>Jennifer Vazquez</FIO>
+		<group>4</group>
+		<semester_1>13</semester_1>
+		<semester_2>11</semester_2>
+		<semester_3>12</semester_3>
+		<semester_4>2</semester_4>
+		<semester_5>13</semester_5>
+		<semester_6>3</semester_6>
+		<semester_7>11</semester_7>
+		<semester_8>11</semester_8>
+		<semester_9>14</semester_9>
+		<semester_10>6</semester_10>
+		<total>96</total>
+	</student>
+	<student id="31">
+		<FIO>Jennifer Cortez</FIO>
+		<group>6</group>
+		<semester_1>7</semester_1>
+		<semester_2>7</semester_2>
+		<semester_3>8</semester_3>
+		<semester_4>5</semester_4>
+		<semester_5>3</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>12</semester_7>
+		<semester_8>10</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>6</semester_10>
+		<total>74</total>
+	</student>
+	<student id="32">
+		<FIO>Rebecca Cook</FIO>
+		<group>4</group>
+		<semester_1>10</semester_1>
+		<semester_2>12</semester_2>
+		<semester_3>11</semester_3>
+		<semester_4>14</semester_4>
+		<semester_5>12</semester_5>
+		<semester_6>1</semester_6>
+		<semester_7>3</semester_7>
+		<semester_8>7</semester_8>
+		<semester_9>13</semester_9>
+		<semester_10>12</semester_10>
+		<total>95</total>
+	</student>
+	<student id="33">
+		<FIO>Barry Berger</FIO>
+		<group>10</group>
+		<semester_1>12</semester_1>
+		<semester_2>6</semester_2>
+		<semester_3>5</semester_3>
+		<semester_4>1</semester_4>
+		<semester_5>11</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>1</semester_7>
+		<semester_8>13</semester_8>
+		<semester_9>7</semester_9>
+		<semester_10>14</semester_10>
+		<total>82</total>
+	</student>
+	<student id="34">
+		<FIO>Megan Collins</FIO>
+		<group>2</group>
+		<semester_1>1</semester_1>
+		<semester_2>13</semester_2>
+		<semester_3>9</semester_3>
+		<semester_4>2</semester_4>
+		<semester_5>1</semester_5>
+		<semester_6>7</semester_6>
+		<semester_7>10</semester_7>
+		<semester_8>9</semester_8>
+		<semester_9>5</semester_9>
+		<semester_10>11</semester_10>
+		<total>68</total>
+	</student>
+	<student id="35">
+		<FIO>Kenneth Wood</FIO>
+		<group>3</group>
+		<semester_1>7</semester_1>
+		<semester_2>11</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>10</semester_4>
+		<semester_5>1</semester_5>
+		<semester_6>7</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>10</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>10</semester_10>
+		<total>86</total>
+	</student>
+	<student id="36">
+		<FIO>Stephen Duffy</FIO>
+		<group>8</group>
+		<semester_1>4</semester_1>
+		<semester_2>3</semester_2>
+		<semester_3>8</semester_3>
+		<semester_4>13</semester_4>
+		<semester_5>10</semester_5>
+		<semester_6>6</semester_6>
+		<semester_7>11</semester_7>
+		<semester_8>4</semester_8>
+		<semester_9>9</semester_9>
+		<semester_10>2</semester_10>
+		<total>70</total>
+	</student>
+	<student id="37">
+		<FIO>Kara Smith</FIO>
+		<group>7</group>
+		<semester_1>5</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>9</semester_3>
+		<semester_4>5</semester_4>
+		<semester_5>2</semester_5>
+		<semester_6>9</semester_6>
+		<semester_7>8</semester_7>
+		<semester_8>10</semester_8>
+		<semester_9>1</semester_9>
+		<semester_10>6</semester_10>
+		<total>65</total>
+	</student>
+	<student id="38">
+		<FIO>Kyle Stevens</FIO>
+		<group>5</group>
+		<semester_1>14</semester_1>
+		<semester_2>3</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>10</semester_4>
+		<semester_5>8</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>10</semester_7>
+		<semester_8>13</semester_8>
+		<semester_9>5</semester_9>
+		<semester_10>14</semester_10>
+		<total>97</total>
+	</student>
+	<student id="39">
+		<FIO>Thomas Hall</FIO>
+		<group>7</group>
+		<semester_1>7</semester_1>
+		<semester_2>11</semester_2>
+		<semester_3>7</semester_3>
+		<semester_4>14</semester_4>
+		<semester_5>14</semester_5>
+		<semester_6>1</semester_6>
+		<semester_7>1</semester_7>
+		<semester_8>5</semester_8>
+		<semester_9>5</semester_9>
+		<semester_10>2</semester_10>
+		<total>67</total>
+	</student>
+	<student id="40">
+		<FIO>Elizabeth Tucker</FIO>
+		<group>10</group>
+		<semester_1>5</semester_1>
+		<semester_2>1</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>5</semester_4>
+		<semester_5>3</semester_5>
+		<semester_6>8</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>1</semester_8>
+		<semester_9>3</semester_9>
+		<semester_10>7</semester_10>
+		<total>57</total>
+	</student>
+	<student id="41">
+		<FIO>Jacqueline Cook</FIO>
+		<group>8</group>
+		<semester_1>3</semester_1>
+		<semester_2>4</semester_2>
+		<semester_3>2</semester_3>
+		<semester_4>10</semester_4>
+		<semester_5>13</semester_5>
+		<semester_6>1</semester_6>
+		<semester_7>6</semester_7>
+		<semester_8>11</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>14</semester_10>
+		<total>68</total>
+	</student>
+	<student id="42">
+		<FIO>Timothy Castro</FIO>
+		<group>2</group>
+		<semester_1>7</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>4</semester_3>
+		<semester_4>14</semester_4>
+		<semester_5>11</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>2</semester_8>
+		<semester_9>4</semester_9>
+		<semester_10>3</semester_10>
+		<total>81</total>
+	</student>
+	<student id="43">
+		<FIO>Jose Page</FIO>
+		<group>6</group>
+		<semester_1>10</semester_1>
+		<semester_2>10</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>10</semester_4>
+		<semester_5>6</semester_5>
+		<semester_6>10</semester_6>
+		<semester_7>9</semester_7>
+		<semester_8>12</semester_8>
+		<semester_9>2</semester_9>
+		<semester_10>12</semester_10>
+		<total>91</total>
+	</student>
+	<student id="44">
+		<FIO>Keith Joseph</FIO>
+		<group>4</group>
+		<semester_1>2</semester_1>
+		<semester_2>9</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>13</semester_4>
+		<semester_5>2</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>7</semester_8>
+		<semester_9>13</semester_9>
+		<semester_10>4</semester_10>
+		<total>86</total>
+	</student>
+	<student id="45">
+		<FIO>Daisy Coleman</FIO>
+		<group>6</group>
+		<semester_1>12</semester_1>
+		<semester_2>5</semester_2>
+		<semester_3>11</semester_3>
+		<semester_4>12</semester_4>
+		<semester_5>12</semester_5>
+		<semester_6>8</semester_6>
+		<semester_7>10</semester_7>
+		<semester_8>12</semester_8>
+		<semester_9>5</semester_9>
+		<semester_10>9</semester_10>
+		<total>96</total>
+	</student>
+	<student id="46">
+		<FIO>Sabrina Curtis</FIO>
+		<group>3</group>
+		<semester_1>10</semester_1>
+		<semester_2>3</semester_2>
+		<semester_3>14</semester_3>
+		<semester_4>7</semester_4>
+		<semester_5>1</semester_5>
+		<semester_6>5</semester_6>
+		<semester_7>10</semester_7>
+		<semester_8>11</semester_8>
+		<semester_9>11</semester_9>
+		<semester_10>1</semester_10>
+		<total>73</total>
+	</student>
+	<student id="47">
+		<FIO>Pamela Young</FIO>
+		<group>4</group>
+		<semester_1>6</semester_1>
+		<semester_2>1</semester_2>
+		<semester_3>14</semester_3>
+		<semester_4>3</semester_4>
+		<semester_5>6</semester_5>
+		<semester_6>12</semester_6>
+		<semester_7>8</semester_7>
+		<semester_8>2</semester_8>
+		<semester_9>6</semester_9>
+		<semester_10>2</semester_10>
+		<total>60</total>
+	</student>
+	<student id="48">
+		<FIO>Andrea Brewer</FIO>
+		<group>7</group>
+		<semester_1>6</semester_1>
+		<semester_2>11</semester_2>
+		<semester_3>2</semester_3>
+		<semester_4>9</semester_4>
+		<semester_5>13</semester_5>
+		<semester_6>1</semester_6>
+		<semester_7>14</semester_7>
+		<semester_8>12</semester_8>
+		<semester_9>7</semester_9>
+		<semester_10>9</semester_10>
+		<total>84</total>
+	</student>
+	<student id="49">
+		<FIO>John Knight</FIO>
+		<group>6</group>
+		<semester_1>4</semester_1>
+		<semester_2>2</semester_2>
+		<semester_3>10</semester_3>
+		<semester_4>11</semester_4>
+		<semester_5>14</semester_5>
+		<semester_6>9</semester_6>
+		<semester_7>7</semester_7>
+		<semester_8>1</semester_8>
+		<semester_9>10</semester_9>
+		<semester_10>8</semester_10>
+		<total>76</total>
+	</student>
+	<student id="50">
+		<FIO>Christopher Wilson</FIO>
+		<group>1</group>
+		<semester_1>2</semester_1>
+		<semester_2>7</semester_2>
+		<semester_3>3</semester_3>
+		<semester_4>11</semester_4>
+		<semester_5>8</semester_5>
+		<semester_6>5</semester_6>
+		<semester_7>2</semester_7>
+		<semester_8>13</semester_8>
+		<semester_9>12</semester_9>
+		<semester_10>13</semester_10>
+		<total>76</total>
+	</student>
+</students>

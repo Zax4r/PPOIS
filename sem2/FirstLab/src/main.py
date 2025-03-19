@@ -5,7 +5,7 @@ from MarksTest import MarksTest
 import unittest
 import pickle
 
-FILE_NAME = r"C:\Users\user\Desktop\PPOIS\LAB1\FirstLab\src\SAVE.pkl"
+FILE_NAME = r"SAVE.pkl"
 
 def save(ui: Interface):
     with open(FILE_NAME, "wb") as file:

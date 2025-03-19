@@ -255,21 +255,6 @@
 		<semester_10>4</semester_10>
 		<total>53</total>
 	</student>
-	<student id="18">
-		<FIO>Martha Nunez</FIO>
-		<group>1</group>
-		<semester_1>8</semester_1>
-		<semester_2>8</semester_2>
-		<semester_3>4</semester_3>
-		<semester_4>11</semester_4>
-		<semester_5>9</semester_5>
-		<semester_6>2</semester_6>
-		<semester_7>6</semester_7>
-		<semester_8>12</semester_8>
-		<semester_9>4</semester_9>
-		<semester_10>10</semester_10>
-		<total>74</total>
-	</student>
 	<student id="19">
 		<FIO>Nicole Bright</FIO>
 		<group>7</group>
@@ -495,21 +480,6 @@
 		<semester_10>2</semester_10>
 		<total>67</total>
 	</student>
-	<student id="34">
-		<FIO>Arthur Smith</FIO>
-		<group>1</group>
-		<semester_1>10</semester_1>
-		<semester_2>12</semester_2>
-		<semester_3>6</semester_3>
-		<semester_4>2</semester_4>
-		<semester_5>6</semester_5>
-		<semester_6>11</semester_6>
-		<semester_7>14</semester_7>
-		<semester_8>5</semester_8>
-		<semester_9>8</semester_9>
-		<semester_10>13</semester_10>
-		<total>87</total>
-	</student>
 	<student id="35">
 		<FIO>Jessica Cuevas</FIO>
 		<group>8</group>
@@ -689,36 +659,6 @@
 		<semester_9>11</semester_9>
 		<semester_10>10</semester_10>
 		<total>70</total>
-	</student>
-	<student id="47">
-		<FIO>Margaret Blevins</FIO>
-		<group>1</group>
-		<semester_1>14</semester_1>
-		<semester_2>8</semester_2>
-		<semester_3>1</semester_3>
-		<semester_4>14</semester_4>
-		<semester_5>1</semester_5>
-		<semester_6>8</semester_6>
-		<semester_7>11</semester_7>
-		<semester_8>5</semester_8>
-		<semester_9>4</semester_9>
-		<semester_10>11</semester_10>
-		<total>77</total>
-	</student>
-	<student id="48">
-		<FIO>Megan Burch</FIO>
-		<group>1</group>
-		<semester_1>3</semester_1>
-		<semester_2>1</semester_2>
-		<semester_3>10</semester_3>
-		<semester_4>12</semester_4>
-		<semester_5>13</semester_5>
-		<semester_6>14</semester_6>
-		<semester_7>10</semester_7>
-		<semester_8>14</semester_8>
-		<semester_9>1</semester_9>
-		<semester_10>4</semester_10>
-		<total>82</total>
 	</student>
 	<student id="49">
 		<FIO>Sergio Newman</FIO>
