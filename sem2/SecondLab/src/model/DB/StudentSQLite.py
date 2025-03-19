@@ -84,7 +84,7 @@ class Student(BASE):
     @classmethod
     def delete_by_FIO_hours(cls, FIO: str,l_hours: int,h_hours: int):
         session = Session()
-        students = session.query(cls).filter(cls.FIO.like(f"%{FIO}%"),cls.total_work<=h_hours,cls.total_work>=l_hours).all()
+        students = session.query(cls).filter(cls.FIO.like(f"{FIO}"),cls.total_work<=h_hours,cls.total_work>=l_hours).all()
         for student in students:
             session.delete(student)
         session.commit()
@@ -111,7 +111,7 @@ class Student(BASE):
     @classmethod
     def delete_by_FIO(cls,FIO: str):
         session = Session()
-        students = session.query(cls).filter(cls.FIO.like(f"%{FIO}%")).all()
+        students = session.query(cls).filter(cls.FIO.like(f"{FIO}")).all()
         for student in students:
             session.delete(student)
         session.commit()
@@ -120,7 +120,7 @@ class Student(BASE):
     @classmethod
     def search_by_FIO_hours(cls,FIO: str,l_hours: int,h_hours: int):
         session = Session()
-        students = session.query(cls).filter(cls.FIO.like(f"%{FIO}%"),cls.total_work<=h_hours,cls.total_work>=l_hours).all()
+        students = session.query(cls).filter(cls.FIO.like(f"{FIO}"),cls.total_work<=h_hours,cls.total_work>=l_hours).all()
         session.close()
         return students
     
@@ -141,7 +141,7 @@ class Student(BASE):
     @classmethod
     def search_by_FIO(cls,FIO: str):
         session = Session()
-        students = session.query(cls).filter(cls.FIO.like(f"%{FIO}%")).all()
+        students = session.query(cls).filter(cls.FIO.like(f"{FIO}")).all()
         session.close()
         return students
         
@@ -159,8 +159,3 @@ class Student(BASE):
 BASE.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
-
-# if __name__ =="__main__":
-#     a = Student()
-#     for i in range(100):
-#         a.add_info()

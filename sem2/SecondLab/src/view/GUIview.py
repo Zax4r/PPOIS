@@ -68,6 +68,7 @@ class GUI(tk.Tk):
         menu_bar.add_command(label="Изменить кол-во записей на странице",command=self.change_pagination)
         menu_bar.add_command(label="Посмотреть информацию",command=lambda: self.print_message(self.controller.get_info()))
         menu_bar.add_command(label="Изменить представление",command=self.change_view)
+        menu_bar.add_command(label='Изменить хранилище для данных',command=self.choose_model)
         
         
     def create_widgets(self):

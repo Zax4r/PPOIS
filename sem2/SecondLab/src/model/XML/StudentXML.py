@@ -4,6 +4,7 @@ import xml.sax
 from faker import Faker
 from typing import List,Tuple
 from .MyStudent import MyStudent
+from MyHandler import MyHandler
 
 class Model():
     def __init__(self,path:str):
@@ -101,7 +102,7 @@ class Model():
     def search_by_FIO_hours(self,FIO: str,l_hours: int,h_hours: int) -> List[MyStudent]:
         res = []
         for stud in self.data:
-            if FIO in stud.FIO and stud.total >= l_hours and stud.total<=h_hours:
+            if FIO == stud.FIO and stud.total >= l_hours and stud.total<=h_hours:
                 res.append(stud)
         
         return res
@@ -124,7 +125,7 @@ class Model():
     def search_by_FIO(self,FIO: str)-> List[MyStudent]:
         res = []
         for stud in self.data:
-            if FIO in stud.FIO:
+            if FIO == stud.FIO:
                 res.append(stud)
         
         return res
@@ -163,44 +164,6 @@ class Model():
             f.write(self.doc.toprettyxml())
         self.remove_whitespace_nodes(self.doc)
         self.update_data()
-    
-class MyHandler(xml.sax.ContentHandler):
-    
-    def __init__(self):
-        self.data = []
-        self.stud = None
-    
-    def startElement(self, name, attrs):
-        self.current = name
-        if self.current == "student":
-            self.stud = MyStudent(attrs['id'])
-    
-    def characters(self, content):
-        if not content.strip():
-            return
-        if self.current == "FIO":
-            self.stud.FIO = content
-        elif self.current == "group":
-            self.stud.group = int(content.strip())
-        elif self.current.startswith("semester"):
-            index = int(self.current.split('_')[1]) -1
-            self.stud.work[index] = int(content.strip())
-        elif self.current == 'total':
-            self.stud.total = int(content.strip())
-    
-    def endElement(self, name):
-        if name == "student":
-            self.data.append(self.stud)   
         
-        
-        
-# if __name__=="__main__":
-#     a = []
-#     for i in range(5):
-#         a.append(Model(f"model/XML/test{i+1}.xml"))
-    
-#     for _ in range(50):
-#         for i in a:
-#             i.add_info()
         
     
