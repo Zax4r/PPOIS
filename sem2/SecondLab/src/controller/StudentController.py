@@ -10,8 +10,7 @@ class Controller:
         self.view = GUI(self)
         self.current_page = 1
         self.records_per_page = 5
-        self.deleted = 0
-        self.find = 0
+
     
     def show(self):
         self.view.mainloop()
@@ -34,7 +33,6 @@ class Controller:
     #updating view
     def update_view_delition(self):
         amount = self.curr_data - self.get_data()
-        self.deleted +=amount
         if amount:
             self.view.print_message(f"Удалено записей {amount}")
         else:
@@ -55,8 +53,19 @@ class Controller:
         self.curr_data = self.model.get_data()
         return max(((self.curr_data + self.records_per_page -1)//self.records_per_page),1)
     
-    def change_pagination(self, new_numb: int):
-        self.records_per_page = new_numb
+    def change_pagination(self, new_pages: int,window):
+        try:
+                new_pages = int(new_pages)
+        except ValueError:
+                self.view.print_message("Должно быть натуральное число")
+                window.destroy()
+                return    
+        if new_pages < 1:
+                self.view.print_message("Должно быть натуральным")
+                window.destroy()
+                return
+        window.destroy()
+        self.records_per_page = new_pages
         self.current_page = 1
         self.total_pages = self.calculate_total_pages()
         self.update_view()
@@ -95,48 +104,77 @@ class Controller:
     def get_data(self):
         return self.model.get_data()
     
-    def get_info(self):
-        return f"Найдено: {self.find}\nУдалено: {self.deleted}"
-    
     def get_all_groups(self):
         groups = set(self.model.get_groups())
         return groups        
     
     #deleting
-    def delete_by_group(self,group: int):
+    def delete_by_group(self,group: int,window):
         self.model.delete_by_group(group)
         self.update_view_delition()
+        window.destroy()
         
-    def delete_by_FIO(self,FIO: str):
-        self.model.delete_by_FIO(FIO)
-        self.update_view_delition()
+    def delete_by_FIO(self,FIO: str,window):
+        if self.validate_FIO(FIO):
+            self.model.delete_by_FIO(FIO)
+            self.update_view_delition()
+        window.destroy()
     
-    def delete_by_FIO_hours(self,FIO: str,l_hours: int,h_hours: int):
-        self.model.delete_by_FIO_hours(FIO,l_hours,h_hours)
-        self.update_view_delition()
-    
-    def delete_by_group_hours(self,group: int,l_hours: int,h_hours: int):
-        self.model.delete_by_group_hours(group,l_hours,h_hours)
-        self.update_view_delition()
+    def delete_by_FIO_hours(self,FIO: str,l_hours: str,h_hours: str,window):
+        if self.validate_FIO(FIO) and self.validate_hours(l_hours,h_hours):
+            self.model.delete_by_FIO_hours(FIO,int(l_hours),int(h_hours))
+            self.update_view_delition()
+        window.destroy()
+        
+    def delete_by_group_hours(self,group: int,l_hours: int,h_hours: int,window):
+        if self.validate_hours(l_hours,h_hours):
+            self.model.delete_by_group_hours(group,int(l_hours),int(h_hours))
+            self.update_view_delition()
+        window.destroy()
              
     #searching    
-    def search_by_FIO_hours(self,FIO: str,l_hours: int,h_hours: int):
-        students = self.model.search_by_FIO_hours(FIO,l_hours,h_hours)
-        self.find +=len(students)
-        self.view.show_find(students)
+    def search_by_FIO_hours(self,FIO,l_hours,h_hours,window):
+        if self.validate_FIO(FIO) and self.validate_hours(l_hours,h_hours):
+            students = self.model.search_by_FIO_hours(FIO,int(l_hours),int(h_hours))
+
+            self.view.show_find(students)
+        window.destroy()
         
-    def search_by_group_hours(self,group: int,l_hours: int,h_hours: int):
-        students = self.model.search_by_group_hours(group,l_hours,h_hours)
-        self.find +=len(students)
-        self.view.show_find(students)
-    
-    def search_by_group(self,group: int):
+    def search_by_group_hours(self,group: int,l_hours: int,h_hours: int,window):
+        if self.validate_hours(l_hours,h_hours):
+            students = self.model.search_by_group_hours(group,int(l_hours),int(h_hours))
+
+            self.view.show_find(students)
+        window.destroy()
+        
+    def search_by_group(self,group: int,window):
         students = self.model.search_by_group(group)
-        self.find +=len(students)        
+
         self.view.show_find(students)
+        window.destroy()
     
-    def search_by_FIO(self,FIO: str):
-        students = self.model.search_by_FIO(FIO)
-        self.find +=len(students)
-        self.view.show_find(students)
+    def search_by_FIO(self,FIO: str,window):
+        if self.validate_FIO(FIO):
+            students = self.model.search_by_FIO(FIO)
+
+            self.view.show_find(students)
+        window.destroy()
         
+    #validations
+    def validate_FIO(self,FIO):
+        for i in FIO:
+            if i.isdigit():
+                self.view.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
+                return False
+            
+        if not FIO:
+            self.view.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
+            return False
+        
+        return True
+    
+    def validate_hours(self,l_hours,h_hours):
+        if not(l_hours.isdecimal() and h_hours.isdecimal()):
+            self.view.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
+            return False
+        return True

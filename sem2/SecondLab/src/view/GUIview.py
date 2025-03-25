@@ -54,17 +54,17 @@ class GUI(tk.Tk):
         menu_bar.add_cascade(label="Добавление",menu=add_menu)     
         
         search_menu = tk.Menu(menu_bar)
-        search_menu.add_command(label="Найти по ФИО и границам ОПТ",command=self.get_FIO_hours_to_search)
-        search_menu.add_command(label="Найти по группе и границам ОПТ",command=self.get_group_hours_to_search)
-        search_menu.add_command(label="Найти по группе",command=self.get_group_to_search)
-        search_menu.add_command(label="Найти по ФИО",command=self.get_FIO_to_search)
+        search_menu.add_command(label="Найти по ФИО и границам ОПТ",command=self.get_FIO_hours)
+        search_menu.add_command(label="Найти по группе и границам ОПТ",command=self.get_group_hours)
+        search_menu.add_command(label="Найти по группе",command=self.get_group)
+        search_menu.add_command(label="Найти по ФИО",command=self.get_FIO)
         menu_bar.add_cascade(label="Поиск информации",menu=search_menu)
         
         delete_menu = tk.Menu(menu_bar)
-        delete_menu.add_command(label = "Удалить по ФИО и границам ОПТ",command=self.get_FIO_hours_to_del)
-        delete_menu.add_command(label = "Удалить по группе и границам ОПТ",command=self.get_group_hours_to_del)
-        delete_menu.add_command(label = "Удалить по группе",command=self.get_group_to_del)
-        delete_menu.add_command(label = "Удалить по ФИО",command=self.get_FIO_to_del)
+        delete_menu.add_command(label = "Удалить по ФИО и границам ОПТ",command=lambda: self.get_FIO_hours(to_del=True))
+        delete_menu.add_command(label = "Удалить по группе и границам ОПТ",command=lambda: self.get_group_hours(to_del=True))
+        delete_menu.add_command(label = "Удалить по группе",command=lambda: self.get_group(to_del=True))
+        delete_menu.add_command(label = "Удалить по ФИО",command=lambda: self.get_FIO(to_del=True))
         menu_bar.add_cascade(label="Удаление",menu=delete_menu)
         
         menu_bar.add_command(label="Изменить представление",command=self.change_view)
@@ -177,7 +177,7 @@ class GUI(tk.Tk):
         new_label.grid(row=0,column=0)
         new_entry = tk.Entry(changing)
         new_entry.grid(row=1,column=0)
-        entry_button = tk.Button(changing,text="Изменить",command=lambda: self.change_pagin(new_entry.get().strip(),changing))
+        entry_button = tk.Button(changing,text="Изменить",command=lambda: self.controller.change_pagination(new_entry.get().strip(),changing))
         entry_button.grid(row=2,column=1)
         
     def change_pagin(self,new_pages: str,window):
@@ -193,9 +193,9 @@ class GUI(tk.Tk):
             self.controller.change_pagination(new_pages)
         window.destroy()
         
-    def get_FIO_hours_to_search(self):
+    def get_FIO_hours(self,to_del:bool = False):
         search = tk.Toplevel(self)
-        search.title("Поиск")
+        search.title("Ввод данных")
         search.geometry("400x100")
         tk.Label(search,text="Имя").grid(row=0)
         FIO_entry = tk.Entry(search)
@@ -206,29 +206,14 @@ class GUI(tk.Tk):
         tk.Label(search,text="верхняя граница ОПТ").grid(row=2)
         hours_H_entry = tk.Entry(search)
         hours_H_entry.grid(row=2,column=1)
-        search_button = tk.Button(search,text="Ввод",command=lambda: self.search_by_FIO_hours(FIO_entry.get().strip(),hours_L_entry.get().strip(),hours_H_entry.get().strip(),search))
-        search_button.grid(row=3,column=2)
-        
-    def search_by_FIO_hours(self,FIO,l_hours,h_hours,window):
-        for i in FIO:
-            if i.isdigit():
-                self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-                window.destroy()
-                return
-            
-        if not FIO:
-            self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-            window.destroy()
-        elif not(l_hours.isdecimal() and h_hours.isdecimal()):
-            self.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
-            window.destroy()
+        if to_del:
+            search_button = tk.Button(search,text="Удалить",command=lambda: self.controller.delete_by_FIO_hours(FIO_entry.get().strip(),(hours_L_entry.get().strip()),(hours_H_entry.get().strip()),search))
         else:
-            self.controller.search_by_FIO_hours(FIO,int(l_hours),int(h_hours))
-            window.destroy()
-            
-                  
+            search_button = tk.Button(search,text="Ввод",command=lambda: self.controller.search_by_FIO_hours(FIO_entry.get().strip(),(hours_L_entry.get().strip()),(hours_H_entry.get().strip()),search))
+
+        search_button.grid(row=3,column=2)                 
     
-    def get_group_hours_to_search(self):
+    def get_group_hours(self,to_del: bool = False):
         groups = self.controller.get_all_groups()
         groups = list(groups)
         groups.sort()
@@ -239,7 +224,7 @@ class GUI(tk.Tk):
             groups[i] = str(groups[i])
             
         search = tk.Toplevel(self)
-        search.title("Поиск")
+        search.title("Ввод данных")
         search.geometry("400x100")
         groups_label = tk.Label(search,text = "Группа")
         groups_label.grid(row=0,column=0)
@@ -252,18 +237,14 @@ class GUI(tk.Tk):
         tk.Label(search,text="верхняя граница ОПТ").grid(row=2)
         hours_H_entry = tk.Entry(search)
         hours_H_entry.grid(row=2,column=1)
-        search_button = tk.Button(search,text="Ввод",command=lambda: self.search_by_group_hours(combobox.get().strip(),hours_L_entry.get().strip(),hours_H_entry.get().strip(),search))
-        search_button.grid(row=3,column=2)
-            
-    def search_by_group_hours(self,group,l_hour,h_hour,window): 
-        if l_hour.isdecimal() and h_hour.isdecimal():
-            self.controller.search_by_group_hours(int(group),int(l_hour),int(h_hour))
-            window.destroy()
+        if to_del:
+            search_button = tk.Button(search,text="Удалить",command=lambda: self.controller.delete_by_group_hours(int(combobox.get().strip()),(hours_L_entry.get().strip()),(hours_H_entry.get().strip()),search))
         else:
-            self.print_message("Ошибка ввода\nЧасы работы должны быть неотриц. числами")
-            window.destroy()
+            search_button = tk.Button(search,text="Ввод",command=lambda: self.controller.search_by_group_hours(int(combobox.get().strip()),(hours_L_entry.get().strip()),(hours_H_entry.get().strip()),search))
+
+        search_button.grid(row=3,column=2)
     
-    def get_group_to_search(self):
+    def get_group(self,to_del:bool = False):
         groups = self.controller.get_all_groups()
         groups = list(groups)
         groups.sort()
@@ -274,155 +255,32 @@ class GUI(tk.Tk):
             groups[i] = str(groups[i])
         search = tk.Toplevel(self)
         search.geometry("400x100")
-        search.title("Поиск")
+        search.title("Ввод данных")
         groups_label = tk.Label(search,text = "Группа")
         groups_label.grid(row=0,column=0)
         combobox = ttk.Combobox(search,values=groups,state="readonly")
         combobox.current(0)
         combobox.grid(row=1,column=0)
-        button = tk.Button(search,text="Искать",command=lambda: self.search_by_group(combobox.get().strip(),search))
+        if to_del:
+            button = tk.Button(search,text="Удалить",command=lambda: self.controller.delete_by_group(int(combobox.get().strip()),search))
+        else:
+            button = tk.Button(search,text="Ввод",command=lambda: self.controller.search_by_group(int(combobox.get().strip()),search))
         button.grid(row=1,column=2)
-        
-    def search_by_group(self,group,window):
-        self.controller.search_by_group(int(group))
-        window.destroy()
     
-    def get_FIO_to_search(self):
+    def get_FIO(self,to_del:bool = False):
         search = tk.Toplevel(self)
-        search.title("Поиск")
+        search.title("Ввод данных")
         tk.Label(search,text="ФИО").grid(row=0)
         FIO_entry = tk.Entry(search)
         FIO_entry.grid(row=1,column=0)
-        button = tk.Button(search,text="Искать",command=lambda: self.search_by_FIO(FIO_entry.get().strip(),search))
-        button.grid(row=1,column=2)
-        
-    def search_by_FIO(self,FIO,window):
-        for i in FIO:
-            if i.isdigit():
-                self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-                window.destroy()
-                return
-            
-        if FIO:
-            self.controller.search_by_FIO(FIO)
-            window.destroy()
+        if to_del:
+            button = tk.Button(search,text="Удалить",command=lambda: self.controller.delete_by_FIO(FIO_entry.get().strip(),search))
         else:
-            self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-            window.destroy()  
+            button = tk.Button(search,text="Ввод",command=lambda: self.controller.search_by_FIO(FIO_entry.get().strip(),search))
+        button.grid(row=1,column=2)
     
     def show_find(self,info: List):
         show_find = ShowFind(self,info)
     
     def print_message(self,message):
         messagebox.showwarning(message=message)
-        
-        
-    def get_FIO_hours_to_del(self):
-        delition = tk.Toplevel(self)
-        delition.title("Удаление студента")
-        delition.geometry("400x100")
-        tk.Label(delition,text="Имя").grid(row=0)
-        FIO_entry = tk.Entry(delition)
-        FIO_entry.grid(row=0,column=1)
-        tk.Label(delition,text="нижняя граница ОПТ").grid(row=1)
-        hours_L_entry = tk.Entry(delition)
-        hours_L_entry.grid(row=1,column=1)
-        tk.Label(delition,text="верхняя граница ОПТ").grid(row=2)
-        hours_H_entry = tk.Entry(delition)
-        hours_H_entry.grid(row=2,column=1)
-        delition_button = tk.Button(delition,text="Ввод",command=lambda: self.delete_by_FIO_hours(FIO_entry.get().strip(),hours_L_entry.get().strip(),hours_H_entry.get().strip(),delition))
-        delition_button.grid(row=3,column=2)
-        
-    def delete_by_FIO_hours(self,FIO,l_hour,h_hour,window):
-        for i in FIO:
-            if i.isdigit():
-                self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-                window.destroy()
-                return
-            
-        if not FIO:
-            self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-            window.destroy()
-        elif not(l_hour.isdecimal() and h_hour.isdecimal()):
-            self.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
-            window.destroy()
-        else:
-            self.controller.delete_by_FIO_hours(FIO,int(l_hour),int(h_hour))
-            window.destroy()
-            
-    def get_group_hours_to_del(self):
-        groups = self.controller.get_all_groups()
-        groups = list(groups)
-        groups.sort()
-        if len(groups) == 0:
-            self.print_message("Нет студентов")
-            return None
-        for i in range(len(groups)):
-            groups[i] = str(groups[i])
-            
-        delition = tk.Toplevel(self)
-        delition.title("Удаление студента")
-        delition.geometry("400x100")
-        groups_label = tk.Label(delition,text = "Группа")
-        groups_label.grid(row=0,column=0)
-        combobox = ttk.Combobox(delition,values=groups,state="readonly")
-        combobox.current(0)
-        combobox.grid(row=0,column=1)
-        tk.Label(delition,text="нижняя граница ОПТ").grid(row=1)
-        hours_L_entry = tk.Entry(delition)
-        hours_L_entry.grid(row=1,column=1)
-        tk.Label(delition,text="верхняя граница ОПТ").grid(row=2)
-        hours_H_entry = tk.Entry(delition)
-        hours_H_entry.grid(row=2,column=1)
-        delition_button = tk.Button(delition,text="Ввод",command=lambda: self.delete_by_group_hours(combobox.get(),hours_L_entry.get(),hours_H_entry.get(),delition))
-        delition_button.grid(row=3,column=2)
-            
-    def delete_by_group_hours(self,group,l_hour,h_hour,window): 
-        l_hour,h_hour = l_hour.strip(),h_hour.strip()
-        if l_hour.isdecimal() and h_hour.isdecimal():
-            self.controller.delete_by_group_hours(int(group),int(l_hour),int(h_hour))
-            window.destroy()
-        else:
-            self.print_message("Ошибка ввода\nЧасы работы должны быть неотриц. числами")
-            window.destroy()
-            
-    def get_group_to_del(self):
-        groups = self.controller.get_all_groups()
-        groups = list(groups)
-        groups.sort()
-        if len(groups) == 0:
-            self.print_message("Нет студентов")
-            return None
-        for i in range(len(groups)):
-            groups[i] = str(groups[i])
-        delition = tk.Toplevel(self)
-        delition.geometry("400x100")
-        delition.title("Удаление студента")
-        groups_label = tk.Label(delition,text = "Группа")
-        groups_label.grid(row=0,column=0)
-        combobox = ttk.Combobox(delition,values=groups,state="readonly")
-        combobox.current(0)
-        combobox.grid(row=1,column=0)
-        insert_button = tk.Button(delition,text="Удалить",command=lambda: self.delete_by_group(combobox.get(),delition))
-        insert_button.grid(row=2,column=1)
-    
-    def delete_by_group(self,group,window):
-        self.controller.delete_by_group(int(group))
-        window.destroy()
-    
-    def get_FIO_to_del(self):
-        delition = tk.Toplevel(self)
-        delition.title("Удаление студента")
-        name_label = tk.Label(delition,text="ФИО")
-        name_label.grid(row=0,column=0)
-        name_entry = tk.Entry(delition)
-        name_entry.grid(row=1,column=0)
-        entry_button = tk.Button(delition,text='Удалить',command=lambda: self.delete_by_FIO(name_entry.get().strip(),delition))
-        entry_button.grid(row=2,column=1)
-    
-    def delete_by_FIO(self,FIO,window):
-        if FIO:
-            self.controller.delete_by_FIO(FIO)
-        else:
-            self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-        window.destroy()
