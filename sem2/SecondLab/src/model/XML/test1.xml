@@ -150,21 +150,6 @@
 		<semester_10>12</semester_10>
 		<total>77</total>
 	</student>
-	<student id="11">
-		<FIO>Andrew Shea</FIO>
-		<group>2</group>
-		<semester_1>1</semester_1>
-		<semester_2>3</semester_2>
-		<semester_3>14</semester_3>
-		<semester_4>5</semester_4>
-		<semester_5>11</semester_5>
-		<semester_6>13</semester_6>
-		<semester_7>14</semester_7>
-		<semester_8>1</semester_8>
-		<semester_9>8</semester_9>
-		<semester_10>6</semester_10>
-		<total>76</total>
-	</student>
 	<student id="12">
 		<FIO>Brenda Webb MD</FIO>
 		<group>4</group>
@@ -284,21 +269,6 @@
 		<semester_9>13</semester_9>
 		<semester_10>12</semester_10>
 		<total>76</total>
-	</student>
-	<student id="21">
-		<FIO>Alexis Sandoval</FIO>
-		<group>3</group>
-		<semester_1>13</semester_1>
-		<semester_2>3</semester_2>
-		<semester_3>13</semester_3>
-		<semester_4>3</semester_4>
-		<semester_5>2</semester_5>
-		<semester_6>10</semester_6>
-		<semester_7>14</semester_7>
-		<semester_8>3</semester_8>
-		<semester_9>14</semester_9>
-		<semester_10>7</semester_10>
-		<total>82</total>
 	</student>
 	<student id="22">
 		<FIO>Julian Martin</FIO>
@@ -465,21 +435,6 @@
 		<semester_10>11</semester_10>
 		<total>76</total>
 	</student>
-	<student id="33">
-		<FIO>Matthew Phillips</FIO>
-		<group>3</group>
-		<semester_1>14</semester_1>
-		<semester_2>6</semester_2>
-		<semester_3>3</semester_3>
-		<semester_4>2</semester_4>
-		<semester_5>10</semester_5>
-		<semester_6>7</semester_6>
-		<semester_7>12</semester_7>
-		<semester_8>4</semester_8>
-		<semester_9>7</semester_9>
-		<semester_10>2</semester_10>
-		<total>67</total>
-	</student>
 	<student id="35">
 		<FIO>Jessica Cuevas</FIO>
 		<group>8</group>
@@ -494,21 +449,6 @@
 		<semester_9>4</semester_9>
 		<semester_10>4</semester_10>
 		<total>76</total>
-	</student>
-	<student id="36">
-		<FIO>Janice Reed</FIO>
-		<group>3</group>
-		<semester_1>10</semester_1>
-		<semester_2>4</semester_2>
-		<semester_3>7</semester_3>
-		<semester_4>8</semester_4>
-		<semester_5>14</semester_5>
-		<semester_6>11</semester_6>
-		<semester_7>8</semester_7>
-		<semester_8>7</semester_8>
-		<semester_9>12</semester_9>
-		<semester_10>4</semester_10>
-		<total>85</total>
 	</student>
 	<student id="37">
 		<FIO>Cheryl Burns</FIO>

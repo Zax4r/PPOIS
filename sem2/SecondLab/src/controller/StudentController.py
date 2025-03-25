@@ -1,5 +1,5 @@
 from view.GUIview import GUI
-from typing import Tuple
+from typing import Tuple,List
 import model.DB.StudentSQLite as db
 import model.XML.StudentXML as xml
 
@@ -51,7 +51,7 @@ class Controller:
         self.view.update_infos_label(len(info),self.get_data())
     
     #pagination
-    def calculate_total_pages(self):
+    def calculate_total_pages(self,data = None):
         self.curr_data = self.model.get_data()
         return max(((self.curr_data + self.records_per_page -1)//self.records_per_page),1)
     
@@ -139,3 +139,4 @@ class Controller:
         students = self.model.search_by_FIO(FIO)
         self.find +=len(students)
         self.view.show_find(students)
+        

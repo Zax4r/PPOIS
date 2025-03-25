@@ -87,12 +87,10 @@ class Model():
             file.write(self.doc.toprettyxml())
         self.remove_whitespace_nodes(self.doc)
         
-    
-    def get_info_paged(self,page: int,per_page: int) -> List[MyStudent]:
+    def get_info_paged(cls,page: int,per_page: int) -> List[MyStudent]:
         offset = (page - 1) * per_page
         end = page*per_page
-        return self.data[offset:end]
-    
+        return cls.data[offset:end]
     
     def get_groups(self) -> List[int]:
         groups = []

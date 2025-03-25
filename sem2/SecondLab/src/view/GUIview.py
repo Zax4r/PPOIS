@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox,ttk,filedialog
 from .Views import TableView,TreeView
 from typing import List
+from .ShowFind import ShowFind
 
 class GUI(tk.Tk):
     
@@ -13,9 +14,9 @@ class GUI(tk.Tk):
        self.withdraw()
        self.create_menu()
        self.create_widgets()
-       self.choose_model()
+       self.choose_model(close=True)
     
-    def choose_model(self):
+    def choose_model(self,close: bool):
         model = tk.Toplevel(self)
         model.geometry("600x200")
         model.title("Выбор модели")
@@ -23,7 +24,8 @@ class GUI(tk.Tk):
         XML = tk.Button(model,text="XML",command=lambda: self.choose_xml(model))
         DB.pack(fill="both",anchor='w')
         XML.pack(fill="both",anchor='e')
-        model.protocol("WM_DELETE_WINDOW",lambda: self.end())
+        if close:
+            model.protocol("WM_DELETE_WINDOW",lambda: self.end())
     
     def end(self):
         self.destroy()
@@ -65,10 +67,9 @@ class GUI(tk.Tk):
         delete_menu.add_command(label = "Удалить по ФИО",command=self.get_FIO_to_del)
         menu_bar.add_cascade(label="Удаление",menu=delete_menu)
         
-        menu_bar.add_command(label="Изменить кол-во записей на странице",command=self.change_pagination)
-        menu_bar.add_command(label="Посмотреть информацию",command=lambda: self.print_message(self.controller.get_info()))
         menu_bar.add_command(label="Изменить представление",command=self.change_view)
-        menu_bar.add_command(label='Изменить хранилище для данных',command=self.choose_model)
+        menu_bar.add_command(label='Изменить хранилище для данных',command=lambda: self.choose_model(close=False))
+        
         
         
     def create_widgets(self):
@@ -77,6 +78,8 @@ class GUI(tk.Tk):
         self.table.pack(fill = "both",expand=True)
         self.fram.pack(fill = "both",expand=True)
         navigation_frame = tk.Frame(self)
+        self.change_pagin_button = tk.Button(navigation_frame,text='Изменить кол-во записей на странице',command=self.change_pagination)
+        self.change_pagin_button.pack(side=tk.LEFT,padx=5)    
         self.to_the_start = tk.Button(navigation_frame,text="<<",command=self.controller.start_page)
         self.to_the_start.pack(side=tk.LEFT,padx=5)
         self.prev_button = tk.Button(navigation_frame,text="<",command=self.controller.prev_page)
@@ -88,7 +91,7 @@ class GUI(tk.Tk):
         self.next_button.pack(side=tk.LEFT,padx=5)
         self.to_the_finish = tk.Button(navigation_frame,text=">>",command=self.controller.end_page)
         self.to_the_finish.pack(side=tk.LEFT,padx=5)
-        self.infos_label = tk.Label(self,text="Записей на странице")
+        self.infos_label = tk.Label(navigation_frame,text="Записей на странице")
         self.infos_label.pack(anchor="se",padx=50,pady=20)
     
     def add_random(self):
@@ -140,7 +143,10 @@ class GUI(tk.Tk):
         name,group = name.strip(),group.strip()
         for i in range(len(entries)):
             if entries[i] == "":
-                entries[i] = "0"
+                self.print_message("Ошибка ввода\nЧасы работы должны быть неотриц числами")
+                window.destroy()
+                return
+            
         check = "".join(entries)
         for i in name:
             if i.isdigit():
@@ -155,7 +161,7 @@ class GUI(tk.Tk):
             self.print_message("Ошибка ввода\nГруппа должнa быть неотриц числoм")
             window.destroy()
         elif  not check.isdigit():
-            self.print_message("Ошибка ввода\Часы работы должны быть неотриц числами")
+            self.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
             window.destroy()
         else:
             for i in range(len(entries)):
@@ -305,14 +311,7 @@ class GUI(tk.Tk):
             window.destroy()  
     
     def show_find(self,info: List):
-        show_table = tk.Toplevel(self)
-        show_table.geometry("1920x600")
-        table = TableView(show_table)
-        show_table.title(f"Найдено {len(info)} записей")
-        table.pack(fill = "both",expand=True)
-        table.insert_data(info)
-        b = tk.Button(show_table,text="Close",command= show_table.destroy)
-        b.pack()    
+        show_find = ShowFind(self,info)
     
     def print_message(self,message):
         messagebox.showwarning(message=message)
