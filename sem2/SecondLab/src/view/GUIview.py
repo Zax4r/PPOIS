@@ -135,38 +135,8 @@ class GUI(tk.Tk):
             entry.insert(-1,'0')
             entry.grid(row=i+2, column=1)
             semestr_entry.append(entry)
-        add_button = tk.Button(add_data,text="Добавить",command= lambda: self.add_record(name_entry.get(),group_entry.get(),[entry.get().strip() for entry in semestr_entry],add_data))
+        add_button = tk.Button(add_data,text="Добавить",command= lambda: self.controller.add_data((name_entry.get(),group_entry.get(),[entry.get().strip() for entry in semestr_entry]),add_data))
         add_button.grid(row=13,column=5,columnspan=2)  
-    
-    def add_record(self,name:str,group:str,entries:List,window):
-        name,group = name.strip(),group.strip()
-        for i in range(len(entries)):
-            if entries[i] == "":
-                self.print_message("Ошибка ввода\nЧасы работы должны быть неотриц числами")
-                window.destroy()
-                return
-            
-        check = "".join(entries)
-        for i in name:
-            if i.isdigit():
-                self.print_message("Ошибка ввода\nФИО должно состоять из букв")
-                window.destroy()
-                return
-            
-        if not name: 
-            self.print_message("Ошибка ввода\nФИО должно состоять из букв (и пробельных символов)")
-            window.destroy()
-        elif not group.isdecimal():
-            self.print_message("Ошибка ввода\nГруппа должнa быть неотриц числoм")
-            window.destroy()
-        elif  not check.isdigit():
-            self.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
-            window.destroy()
-        else:
-            for i in range(len(entries)):
-                entries[i] = int(entries[i])
-            self.controller.add_data((name,int(group),entries))
-            window.destroy()
     
     def change_pagination(self):
         changing = tk.Toplevel(self)

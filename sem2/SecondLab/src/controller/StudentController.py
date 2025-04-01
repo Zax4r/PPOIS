@@ -95,8 +95,19 @@ class Controller:
         self.total_pages = self.calculate_total_pages()
         self.update_view()
     
-    def add_data(self,info: Tuple):
-        self.model.add_info(info)
+    def add_data(self,info: Tuple,window = None):
+        if window:
+            window.destroy()
+            
+        if info is not None:
+            if self.validate_info(info):
+                for i in range(len(info[2])):
+                    info[2][i] = int(info[2][i])
+                self.model.add_info(info)
+            else:
+                return
+        else:
+            self.model.add_info(info)
         self.total_pages = self.calculate_total_pages()
         self.update_view()
     
@@ -178,3 +189,23 @@ class Controller:
             self.view.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
             return False
         return True
+
+    def validate_info(self,info):
+        
+        name,group = info[0],info[1]
+        entries = info[2]
+        for i in range(len(entries)):
+            if entries[i] == "":
+                self.view.print_message("Ошибка ввода\nЧасы работы должны быть неотриц числами")
+                return False
+            
+        check = "".join(entries)
+        
+        if not group.isdecimal():
+            self.view.print_message("Ошибка ввода\nГруппа должнa быть неотриц числoм")
+            return False
+        elif  not check.isdigit():
+            self.view.print_message("Ошибка ввода\n Часы работы должны быть неотриц числами")
+            return False
+        else:
+            return self.validate_FIO(name)
