@@ -45,21 +45,6 @@
 		<semester_10>7</semester_10>
 		<total>71</total>
 	</student>
-	<student id="4">
-		<FIO>Tyler Ingram</FIO>
-		<group>1</group>
-		<semester_1>3</semester_1>
-		<semester_2>7</semester_2>
-		<semester_3>2</semester_3>
-		<semester_4>7</semester_4>
-		<semester_5>14</semester_5>
-		<semester_6>7</semester_6>
-		<semester_7>8</semester_7>
-		<semester_8>11</semester_8>
-		<semester_9>4</semester_9>
-		<semester_10>10</semester_10>
-		<total>73</total>
-	</student>
 	<student id="5">
 		<FIO>Kevin Stevens</FIO>
 		<group>3</group>
@@ -90,21 +75,6 @@
 		<semester_10>2</semester_10>
 		<total>67</total>
 	</student>
-	<student id="7">
-		<FIO>Jeffrey Wilson</FIO>
-		<group>1</group>
-		<semester_1>8</semester_1>
-		<semester_2>2</semester_2>
-		<semester_3>5</semester_3>
-		<semester_4>14</semester_4>
-		<semester_5>5</semester_5>
-		<semester_6>10</semester_6>
-		<semester_7>2</semester_7>
-		<semester_8>3</semester_8>
-		<semester_9>4</semester_9>
-		<semester_10>7</semester_10>
-		<total>60</total>
-	</student>
 	<student id="8">
 		<FIO>Deborah Lloyd</FIO>
 		<group>3</group>
@@ -134,21 +104,6 @@
 		<semester_9>7</semester_9>
 		<semester_10>14</semester_10>
 		<total>83</total>
-	</student>
-	<student id="10">
-		<FIO>Steven Hendricks</FIO>
-		<group>1</group>
-		<semester_1>8</semester_1>
-		<semester_2>9</semester_2>
-		<semester_3>7</semester_3>
-		<semester_4>7</semester_4>
-		<semester_5>6</semester_5>
-		<semester_6>14</semester_6>
-		<semester_7>9</semester_7>
-		<semester_8>8</semester_8>
-		<semester_9>4</semester_9>
-		<semester_10>3</semester_10>
-		<total>75</total>
 	</student>
 	<student id="11">
 		<FIO>Robin Beard</FIO>
@@ -735,19 +690,34 @@
 		<semester_10>8</semester_10>
 		<total>76</total>
 	</student>
-	<student id="50">
-		<FIO>Christopher Wilson</FIO>
-		<group>1</group>
-		<semester_1>2</semester_1>
-		<semester_2>7</semester_2>
-		<semester_3>3</semester_3>
-		<semester_4>11</semester_4>
-		<semester_5>8</semester_5>
-		<semester_6>5</semester_6>
-		<semester_7>2</semester_7>
-		<semester_8>13</semester_8>
-		<semester_9>12</semester_9>
-		<semester_10>13</semester_10>
-		<total>76</total>
+	<student id="51">
+		<FIO>awwadaw</FIO>
+		<group>42</group>
+		<semester_1>0</semester_1>
+		<semester_2>0</semester_2>
+		<semester_3>0</semester_3>
+		<semester_4>0</semester_4>
+		<semester_5>0</semester_5>
+		<semester_6>0</semester_6>
+		<semester_7>0</semester_7>
+		<semester_8>0</semester_8>
+		<semester_9>0</semester_9>
+		<semester_10>0</semester_10>
+		<total>0</total>
+	</student>
+	<student id="52">
+		<FIO>asdas</FIO>
+		<group>11</group>
+		<semester_1>0</semester_1>
+		<semester_2>0</semester_2>
+		<semester_3>0</semester_3>
+		<semester_4>0</semester_4>
+		<semester_5>0</semester_5>
+		<semester_6>0</semester_6>
+		<semester_7>0</semester_7>
+		<semester_8>0</semester_8>
+		<semester_9>0</semester_9>
+		<semester_10>0</semester_10>
+		<total>0</total>
 	</student>
 </students>

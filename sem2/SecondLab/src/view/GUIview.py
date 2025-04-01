@@ -38,8 +38,6 @@ class GUI(tk.Tk):
     def choose_xml(self,window):
         xml_path = filedialog.askopenfilename(filetypes=[("XML",'.xml')])
         if not xml_path:
-                window.destroy()
-                self.destroy()
                 return
         self.controller.choose_xml(xml_path)
         window.destroy()
@@ -179,19 +177,6 @@ class GUI(tk.Tk):
         new_entry.grid(row=1,column=0)
         entry_button = tk.Button(changing,text="Изменить",command=lambda: self.controller.change_pagination(new_entry.get().strip(),changing))
         entry_button.grid(row=2,column=1)
-        
-    def change_pagin(self,new_pages: str,window):
-        try:
-            new_pages = int(new_pages)
-        except ValueError:
-            self.print_message("Должно быть натуральное число")
-            window.destroy()
-            return    
-        if new_pages < 1:
-            self.print_message("Должно быть натуральным")
-        else:
-            self.controller.change_pagination(new_pages)
-        window.destroy()
         
     def get_FIO_hours(self,to_del:bool = False):
         search = tk.Toplevel(self)

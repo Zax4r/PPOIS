@@ -1,5 +1,6 @@
 import tkinter as tk
 from .Views import TableView
+from tkinter import messagebox
 
 
 class ShowFind(tk.Toplevel):
@@ -92,3 +93,6 @@ class ShowFind(tk.Toplevel):
         self.current_page = 1
         self.total_pages = self.calculate_total_pages()
         self.update_view()
+        
+    def print_message(self,message):
+        messagebox.showwarning(message=message)
