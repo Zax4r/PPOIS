@@ -1,5 +1,5 @@
 from view.GUIview import GUI
-from typing import Tuple,List
+from typing import Tuple
 import model.DB.StudentSQLite as db
 import model.XML.StudentXML as xml
 

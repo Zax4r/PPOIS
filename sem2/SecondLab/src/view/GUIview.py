@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox,ttk,filedialog
-from .Views import TableView,TreeView
+from .TableView import TableView
+from .TreeView import TreeView
 from typing import List
 from .ShowFind import ShowFind
 

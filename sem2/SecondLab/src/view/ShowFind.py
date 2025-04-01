@@ -1,5 +1,5 @@
 import tkinter as tk
-from .Views import TableView
+from .TableView import TableView
 from tkinter import messagebox
 
 
