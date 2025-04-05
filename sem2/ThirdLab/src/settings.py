@@ -20,3 +20,7 @@ class Directions(Enum):
     DOWN = pygame.Vector2(0,1)
     UPRIGHT45 = pygame.Vector2(1,-1).normalize()
     UPLEFT45 = pygame.Vector2(-1,-1).normalize()
+    
+
+WIDTH_OF_FIRST_ENEMY,HEIGHT_OF_FIRST_ENEMY = 50,50
+SPEED_OF_FIRST_ENEMY = 600

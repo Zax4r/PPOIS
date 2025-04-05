@@ -6,19 +6,20 @@ from BulletManager import BulletManager
 class Player(Entity):
     
     def __init__(self, group,bm:BulletManager):
-        super().__init__(group)
+        super().__init__(group,bm=bm)
         self.image = pygame.surface.Surface((200,200))
         self.image = pygame.transform.scale(self.image,(WIDTH_OF_PLATE,HEIGHT_OF_PLATE))
         self.rect = self.image.get_rect()
-        self.setup(bm)
+        self.shooting_direction = Directions.UP
+        self.setup()
         
-    def setup(self,bm:BulletManager):
+    def setup(self):
         self.direction = 0
         self.rect.centerx = WIDTH/2 - WIDTH_OF_PLATE/2
         self.rect.centery = HEIGHT - HEIGHT_OF_PLATE/2
         self.temp_rect = self.rect
         self.shooting = False
-        self.gun = FirstGun(bm,Directions.UP)
+        self.gun = FirstGun(self.bm,self.shooting_direction)
         self.delay = DELAY_BETWEEN_SHOTS
 
     def input(self):
