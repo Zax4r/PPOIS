@@ -14,9 +14,10 @@ class EnemyLoader:
         res = []
         for layer,enemies in levels[self.level].items():
             enemies_classes = []
-            for enemy_name in enemies:
-                enemies_classes.append(enemies_dict[enemy_name])
-            res.append(EnemiesLayer(enemies_classes,bm=self.bm,starty=self.starty))
-            self.starty += MARGIN_BETWEEN_ENEMIES_Y + HEIGHT_OF_ENEMY
+            if layer.startswith("layer"):
+                for enemy_name in enemies:
+                    enemies_classes.append(enemies_dict[enemy_name])
+                res.append(EnemiesLayer(enemies_classes,bm=self.bm,starty=self.starty))
+                self.starty += MARGIN_BETWEEN_ENEMIES_Y + HEIGHT_OF_ENEMY
         self.level +=1
         EG.load(res)

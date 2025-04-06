@@ -5,6 +5,7 @@ class Bullet(pygame.sprite.Sprite,abc.ABC):
     def __init__(self,pos,direction:Directions):
         super().__init__()
         self.image = pygame.surface.Surface((WIDTH_OF_BULLET,HEIGHT_OF_BULLET))
+        self.image.fill("red")
         self._rect = self.image.get_rect(center = pos)
         self.direction = direction
         self.centerx,self.centery = self._rect.center

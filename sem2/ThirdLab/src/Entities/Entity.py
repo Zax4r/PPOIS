@@ -1,16 +1,20 @@
 import pygame
-from .settings import *
 from .BulletManager.BulletManagerI import BulletManagerI
 from .MovingI import MovingI
+from .Guns.FirstGun import FirstGun
+from .Guns.SecondGun import SecondGun
+from .Guns.ThirdGun import ThirdGun
 import abc
 
 class Entity(pygame.sprite.Sprite,MovingI):
     
-    def __init__(self, *groups,bm:BulletManagerI,hp):
+    def __init__(self, *groups,bm:BulletManagerI,hp:int,img:pygame.surface.Surface):
         pygame.sprite.Sprite.__init__(self,*groups)
         self.bm = bm
         self.hp = hp
-        self.rect:pygame.rect.Rect
+        self.image = img
+        self.image.set_colorkey('white')
+        self.rect = self.image.get_rect()
         
     @property
     def getrect(self):

@@ -1,18 +1,15 @@
-from .EnemyI import EnemyI
-from .settings import *
-from .FirstGun import FirstGun
-from .SecondGun import SecondGun
+from ..EnemyI import *
+
 
 class FirstEnemy(EnemyI):
     
     def __init__(self, *groups, bm,pos):
-        super().__init__(*groups, bm=bm,hp = HP_OF_FIRST_ENEMY)     
-        
-        self.image = pygame.surface.Surface((200,200))
-        self.image = pygame.transform.scale(self.image,(WIDTH_OF_ENEMY,HEIGHT_OF_ENEMY))
-        self.rect = self.image.get_rect(topleft = pos)
+        image = pygame.surface.Surface((200,200))
+        super().__init__(*groups, bm=bm,hp = HP_OF_FIRST_ENEMY,img=image)     
+    
+        self.rect.topleft = pos
         self.centerx = self.rect.centerx
-        
+        self.image.fill('yellow')
         self.gun = FirstGun(self.bm,self.aim)            
             
     def move(self,dt,direction_of_moving):

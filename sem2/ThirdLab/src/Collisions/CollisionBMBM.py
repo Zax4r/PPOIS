@@ -1,4 +1,4 @@
-from .CollisionI import Collision
+from .Collision import Collision
 
 class CollisionBMBM(Collision):
     

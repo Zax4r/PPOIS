@@ -1,5 +1,5 @@
 from settings import *
-from .BulletManager.BulletManagerI import BulletManagerI
+from ..BulletManager.BulletManagerI import BulletManagerI
 import abc
 
 class Gun(abc.ABC):
