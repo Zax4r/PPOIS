@@ -1,11 +1,10 @@
 from settings import *
-from typing import List
-from BulletManager import BulletManager
+from BulletManagerI import BulletManagerI
 import abc
 
 class Gun(abc.ABC):
     
-    def __init__(self,bm:BulletManager,direction:Directions):
+    def __init__(self,bm:BulletManagerI,direction:Directions):
         super().__init__()
         self.bm = bm
         self.direction = direction.value

@@ -1,16 +1,21 @@
 from settings import *
-from Bullet import Bullet
-#Можно было унаследовать от sprite.Group
-class BulletManager:
+from BulletManagerI import BulletManagerI
+
+class BulletManager(BulletManagerI):
     
-    def __init__(self):
-        self.bullets = pygame.sprite.Group()
+    def __init__(self, *sprites):
+        super().__init__(*sprites)
     
-    def add_bullet(self,bullet:Bullet):
-        self.bullets.add(bullet)
+    def add_bullet(self,bullet):
+        self.add(bullet)
         
     def update(self,dt):
-        self.bullets.update(dt)
+        for sprite in self.sprites():
+            sprite.update(dt)
+        self.delete_exited()
         
-    def draw(self,screen:pygame.surface.Surface):
-        self.bullets.draw(screen)
+    def delete_exited(self):
+        for bullet in self.sprites():
+            if bullet.getrecty < 0 or bullet.getrecty > HEIGHT:
+                self.remove(bullet)
+    
