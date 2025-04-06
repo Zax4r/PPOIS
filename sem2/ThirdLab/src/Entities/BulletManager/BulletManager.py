@@ -1,5 +1,5 @@
-from settings import *
-from BulletManagerI import BulletManagerI
+from  ..settings import *
+from .BulletManagerI import BulletManagerI
 
 class BulletManager(BulletManagerI):
     

@@ -1,4 +1,4 @@
-from settings import *
+from .settings import *
 import abc
 
 class EnemyGroupI(abc.ABC,pygame.sprite.Group):

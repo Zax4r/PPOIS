@@ -1,6 +1,6 @@
-from Entity import Entity
+from .Entity import Entity
 
-from settings import *
+from .settings import *
 
 class EnemyI(Entity):
     

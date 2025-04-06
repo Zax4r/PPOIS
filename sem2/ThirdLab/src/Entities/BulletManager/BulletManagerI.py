@@ -1,6 +1,5 @@
 import abc
-from Bullet import Bullet
-from settings import *
+import pygame
 
 class BulletManagerI(abc.ABC,pygame.sprite.Group):
     
@@ -8,7 +7,7 @@ class BulletManagerI(abc.ABC,pygame.sprite.Group):
         super().__init__(*sprites)
     
     @abc.abstractmethod
-    def add_bullet(self,bullet:Bullet):
+    def add_bullet(self,bullet):
         pass
     
     @abc.abstractmethod        

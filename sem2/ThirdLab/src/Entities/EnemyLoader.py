@@ -1,7 +1,7 @@
-from EnemyGroupI import EnemyGroupI
-from EnemiesLayer import EnemiesLayer
-from settings import *
-from levels import *
+from .EnemyGroupI import EnemyGroupI
+from .EnemiesLayer import EnemiesLayer
+from .settings import *
+from .levels import *
 
 class EnemyLoader:
     

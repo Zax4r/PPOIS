@@ -1,5 +1,5 @@
-from settings import *
-from EnemyGroupI import EnemyGroupI
+from .settings import *
+from .EnemyGroupI import EnemyGroupI
 import random
 
 class EnemyGroup(EnemyGroupI):

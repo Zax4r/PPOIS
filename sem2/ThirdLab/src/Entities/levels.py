@@ -1,4 +1,4 @@
-from FirstEnemy import FirstEnemy
+from .FirstEnemy import FirstEnemy
 
 enemies_dict = {
     'FirstEnemy':FirstEnemy

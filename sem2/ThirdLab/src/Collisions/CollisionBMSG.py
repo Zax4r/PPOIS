@@ -21,7 +21,8 @@ class CollisionBMSG(Collision):
     
     def work_with_collision(self, sprite1, sprite2, first, second):
         first.remove(sprite1)
-        if not sprite2.update_hp(10):
+        if not sprite2.update_hp(sprite1.dmg):
             second.remove(sprite2)
+            sprite2.kill()
 
             

@@ -1,7 +1,7 @@
 import pygame
-from settings import *
-from BulletManagerI import BulletManagerI
-from MovingI import MovingI
+from .settings import *
+from .BulletManager.BulletManagerI import BulletManagerI
+from .MovingI import MovingI
 import abc
 
 class Entity(pygame.sprite.Sprite,MovingI):

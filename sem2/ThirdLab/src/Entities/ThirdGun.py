@@ -1,7 +1,5 @@
-from settings import *
-from Gun import Gun
-from Bullet import Bullet
-from BulletManagerI import BulletManagerI
+from .Gun import *
+from .Bullets.TeleportingBullet import TeleportingBullet
 
 class ThirdGun(Gun):
     
@@ -12,6 +10,6 @@ class ThirdGun(Gun):
         
     def shoot(self,pos:pygame.Vector2): 
         for direction in self.res_directions:
-            self.bm.add_bullet(Bullet(pos,direction))
+            self.bm.add_bullet(TeleportingBullet(pos,direction))
     
     

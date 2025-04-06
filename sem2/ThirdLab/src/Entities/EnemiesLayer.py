@@ -1,4 +1,4 @@
-from settings import *
+from .settings import *
 
 class EnemiesLayer(pygame.sprite.Group):
     

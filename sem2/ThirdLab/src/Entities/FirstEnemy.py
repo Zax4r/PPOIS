@@ -1,11 +1,11 @@
-from EnemyI import EnemyI
-from settings import *
-from BulletManager import BulletManager
-from FirstGun import FirstGun
+from .EnemyI import EnemyI
+from .settings import *
+from .FirstGun import FirstGun
+from .SecondGun import SecondGun
 
 class FirstEnemy(EnemyI):
     
-    def __init__(self, *groups, bm:BulletManager,pos):
+    def __init__(self, *groups, bm,pos):
         super().__init__(*groups, bm=bm,hp = HP_OF_FIRST_ENEMY)     
         
         self.image = pygame.surface.Surface((200,200))
@@ -24,3 +24,7 @@ class FirstEnemy(EnemyI):
     
     def update(self,dt,direction_of_moving):
         self.move(dt,direction_of_moving)
+        
+    def kill(self):
+        super().kill()
+        

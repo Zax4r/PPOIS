@@ -1,6 +1,6 @@
-from settings import *
-
-class Bullet(pygame.sprite.Sprite):
+from .settings import *
+import abc
+class Bullet(pygame.sprite.Sprite,abc.ABC):
     
     def __init__(self,pos,direction:Directions):
         super().__init__()
@@ -11,11 +11,15 @@ class Bullet(pygame.sprite.Sprite):
         
     def move(self,dt):
         self.centerx += self.direction.x * VELOCITY_OF_BULLET * dt
-        self.centerx = self.centerx%WIDTH
         self.centery += self.direction.y * VELOCITY_OF_BULLET * dt
         self._rect.center = self.centerx,self.centery
-        
+    
+    @abc.abstractmethod
+    def update_direction(self):
+        pass
+    
     def update(self,dt):
+        self.update_direction()
         self.move(dt)
     
     @property

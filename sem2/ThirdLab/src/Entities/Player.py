@@ -1,8 +1,8 @@
-from PlayerI import PlayerI
-from settings import *
-from FirstGun import FirstGun
-from SecondGun import SecondGun
-from ThirdGun import ThirdGun
+from .PlayerI import PlayerI
+from .settings import *
+from .FirstGun import FirstGun
+from .SecondGun import SecondGun
+from .ThirdGun import ThirdGun
 
 class Player(PlayerI):
     
@@ -19,7 +19,7 @@ class Player(PlayerI):
         self.rect.centery = HEIGHT - HEIGHT_OF_PLATE/2
         self.centerx = self.rect.centerx
         self.shooting = False
-        self.gun = ThirdGun(self.bm,self.aim)
+        self.gun = SecondGun(self.bm,self.aim)
         self.delay = DELAY_BETWEEN_SHOTS
 
     def input(self):

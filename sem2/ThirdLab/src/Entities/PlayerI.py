@@ -1,7 +1,7 @@
-from Entity import Entity
-from InputI import InputI
+from .Entity import Entity
+from .InputI import InputI
 
-from settings import *
+from .settings import *
 
 class PlayerI(Entity,InputI):
     
