@@ -32,8 +32,14 @@ class EnemyGroup(EnemyGroupI):
             self.delay = 0
 
             
-            
+
         if self.minleft <= MARGIN_OF_ENEMIES_X:    
             self.direction_of_moving = 1
+            self.step()
         elif self.maxright >= WIDTH-MARGIN_OF_ENEMIES_X:    
             self.direction_of_moving = -1
+            self.step()
+    
+    def step(self):
+        for sprite in self.sprites():
+            sprite.rect.centery += STEP_ENEMIES

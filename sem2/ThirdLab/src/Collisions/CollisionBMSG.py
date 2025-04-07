@@ -15,14 +15,15 @@ class CollisionBMSG(Collision):
         bullet,sprite = self.check_collision(first,second)
         if bullet and sprite:
             return self.work_with_collision(bullet,sprite,first,second)
-        return None
+        return None,None
     
     def work_with_collision(self, sprite1, sprite2, first, second):
         first.remove(sprite1)
         if not sprite2.update_hp(sprite1.dmg):
             second.remove(sprite2)
-            return sprite2.rect.center if random.randint(0,100)>50 else None
-        return None
+            pos,scores = sprite2.rect.center,sprite2.score
+            return pos,scores
+        return None,None
             
 
             

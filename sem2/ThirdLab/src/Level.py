@@ -21,7 +21,8 @@ class Level:
         
     def setup(self,display:pygame.surface.Surface):
         self.screen = display
-                
+        self.all_scores = 0
+        
         self.bm_player = BulletManager()
         self.bm_enemy = BulletManager()
         
@@ -48,10 +49,12 @@ class Level:
         self.collider_bmobs.collision(self.bm_player,self.obstacle_group)
         self.colliderpbonus.collision(self.bonus_group,self.player_sprite)
         
-        pos = self.collider_bmsg.collision(self.bm_player,self.enemy_sprites)
-        
-        if pos:
+        pos,scores = self.collider_bmsg.collision(self.bm_player,self.enemy_sprites)
+        if scores:
+            self.all_scores += scores
+        if pos and self.all_scores//100:
             self.bonus_group.add(Bonus(self.bonus_group,pos=pos))
+            self.all_scores = 0
     
     
     def update(self,dt:float):
