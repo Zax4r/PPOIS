@@ -7,8 +7,8 @@ class Player(PlayerI):
     def __init__(self, *group,bm):
         self.import_assets()
         self.status = "idle"
-        self.level_of_gun = 1
-        super().__init__(*group,bm=bm,hp=255,img=self.animations[self.status][self.level_of_gun-1])
+        self.level_of_gun = 3
+        super().__init__(*group,bm=bm,hp=HP_PLAYER,img=self.animations[self.status][self.level_of_gun-1])
         self.rect = self.image.get_rect()
         self.setup()
         
@@ -20,7 +20,6 @@ class Player(PlayerI):
             for _,_,img_names in walk(full_path):
                 for img_name in img_names:
                     self.animations[name].insert(0,pygame.image.load(full_path+f'/{img_name}'))
-        print(self.animations)
     
     def setup(self):
         self.direction_of_moving = 0

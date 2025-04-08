@@ -13,6 +13,7 @@ class Entity(pygame.sprite.Sprite,MovingI):
         self.bm = bm
         self.hp = hp
         self.image = img
+        self.score = 0
         self.image.set_colorkey('white')
         self.rect = self.image.get_rect()
         
@@ -21,10 +22,10 @@ class Entity(pygame.sprite.Sprite,MovingI):
         return self.rect
     
     def update_hp(self,dmg):
-        if self.hp <= dmg:
-            return False
         self.hp -= dmg   
-        return True
+    
+    def get_status(self):
+        return self.hp > 0
     
         
     

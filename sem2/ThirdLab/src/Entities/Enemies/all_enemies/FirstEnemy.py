@@ -21,7 +21,5 @@ class FirstEnemy(EnemyI):
     
     def update(self,dt,direction_of_moving):
         self.move(dt,direction_of_moving)
-        
-    def kill(self):
-        super().kill()
+
         
