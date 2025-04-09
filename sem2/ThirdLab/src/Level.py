@@ -8,7 +8,7 @@ from Entities.Enemies.EnemyGroup import EnemyGroup
 
 from Bonus.Bonus import Bonus
 
-from GameOver import GameOver
+from GameOver.GameOver import GameOver
 
 from Collisions.CollisionBMBM import CollisionBMBM
 from Collisions.CollisionBMObstacle import CollisionBMObstacle
@@ -49,7 +49,6 @@ class Level:
             self.enemy_loader.load(self.enemy_sprites,self.level)
             self.level += 1
             
-    
     def _create_groups(self):
         self.bm_player = BulletManager()
         self.bm_enemy = BulletManager()

@@ -1,4 +1,4 @@
-from settings import *
+from .settings import *
 
 class GameOver:
     def __init__(self, level):
@@ -28,7 +28,7 @@ class GameOver:
             return self._new_high_score()
         
         else:
-            if pygame.key.get_pressed()[pygame.K_KP_ENTER]:
+            if pygame.key.get_pressed()[pygame.K_RETURN]:
                 return ''
         
 

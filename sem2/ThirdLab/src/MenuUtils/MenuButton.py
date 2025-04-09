@@ -22,7 +22,6 @@ class MenuButton():
         if self.top_rect.collidepoint(mouse_pos):
             self.bgcolor = 'skyblue'
             if pygame.mouse.get_pressed()[0] and not self.pressed:
-                self.pressed = True
                 return True
         else:
             self.bgcolor = 'blue'

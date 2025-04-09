@@ -18,9 +18,7 @@ class Game:
         self.state = States.MENU
         self.running = True
         self.time = pygame.time.Clock()
-        self.level = Level(self.screen,-1)
         self.menu = Menu(self.screen)
-        self.new_name,self.record = None,-1
         
     def run(self):
         while self.running:
@@ -33,15 +31,19 @@ class Game:
                     self.running = False
             
             if self.state is States.GAME:  
-                self.new_name,self.record = self.level.update(dt)
+                self.new_name,self.new_score = self.level.update(dt)
                 if self.new_name is not None:
                     self.state = States.MENU
                     self.menu = Menu(self.screen)
+                    self.menu.add_record(self.new_name,self.new_score)
+        
             elif self.state is States.MENU:
                 self.start_game = self.menu.update()
                 if self.start_game:
+                    self.top_score = self.menu.get_top()
                     self.state = States.GAME
-                    self.level = Level(self.screen,-10)
+                    self.level = Level(self.screen,self.top_score)
                     self.start_game = False
+                    
             pygame.display.update()
     
