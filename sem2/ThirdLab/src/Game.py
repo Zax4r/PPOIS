@@ -17,9 +17,11 @@ class Game:
         
         with open('settings.json','r') as file:
             self.data = json.load(file)
-            
+        self.music = pygame.mixer.Sound('./audio/music.wav')
+        self.music.set_volume(0.1)
+        self.music.play(loops=-1)
         self.screen = pygame.display.set_mode((self.data['WIDTH'],self.data['HEIGHT']))
-        pygame.display.set_caption("ЗАЛУПА ЕЖА")
+        pygame.display.set_caption("Галактические захватчики")
         self.clock = pygame.time.Clock()
         self.state = States.MENU
         self.running = True

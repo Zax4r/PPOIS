@@ -16,4 +16,4 @@ class CollisionPBonus(Collision):
     
     def work_with_collision(self, sprite1, sprite2, first, second):
         first.remove(sprite1)
-        sprite2.upgrade_gun()
+        sprite2.bonus()

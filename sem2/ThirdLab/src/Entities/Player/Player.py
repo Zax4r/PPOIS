@@ -28,7 +28,7 @@ class Player(PlayerI):
         self.rect.centery = self.data['HEIGHT'] - self.data['player']['HEIGHT_OF_PLAYER']/2
         self.centerx = self.rect.centerx
         self.shooting = False
-        self.gun = self.available_guns[self.level_of_gun](self.bm,self.aim)
+        self.gun = self.available_guns[self.level_of_gun](self.bm,self.aim,self.data)
         self.delay =self.data['player']['DELAY_BETWEEN_SHOTS']
 
     def input(self):
@@ -51,6 +51,9 @@ class Player(PlayerI):
     def shoot(self):
         if self.shooting and self.delay >= self.data['player']['DELAY_BETWEEN_SHOTS']:
             self.gun.shoot(self.rect.center)
+            music = pygame.mixer.Sound('./audio/laser.wav')
+            music.set_volume(0.1)
+            music.play()
             self.delay = 0
     
     def update(self,dt):
@@ -64,11 +67,13 @@ class Player(PlayerI):
         self.image = self.animations[self.status][self.level_of_gun-1]
         self.image = pygame.transform.scale(self.image,(self.rect.size))
         
-    def upgrade_gun(self):
+    def bonus(self):
         if self.level_of_gun > 2:
+            if self.hp < 3:
+                self.hp +=1
             return
         self.level_of_gun += 1
-        self.gun = self.available_guns[self.level_of_gun](self.bm,self.aim)
+        self.gun = self.available_guns[self.level_of_gun](self.bm,self.aim,self.data)
         
 
         

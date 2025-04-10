@@ -56,4 +56,3 @@ class PlayerDatabase:
         finally:
             if connection:
                 connection.close()
-                print("Соединение с базой данных закрыто.")

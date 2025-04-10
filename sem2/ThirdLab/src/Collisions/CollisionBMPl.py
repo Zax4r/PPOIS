@@ -1,4 +1,5 @@
 from .Collision import Collision
+import pygame
 
 class CollisionBmPl(Collision):
         
@@ -16,6 +17,9 @@ class CollisionBmPl(Collision):
     def work_with_collision(self, sprite1, sprite2, first, second):
         first.remove(sprite1)
         sprite2.update_hp(1)
+        music = pygame.mixer.Sound('./audio/explosion.wav')
+        music.set_volume(0.15)
+        music.play()
             
 
             

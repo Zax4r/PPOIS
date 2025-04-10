@@ -25,7 +25,143 @@
         "SPEED_OF_PLAYER" : 600,
         "HP_PLAYER" : 3,
         "DELAY_BETWEEN_SHOTS" : 0.5
+    },
+    "bullet":
+    {
+        "WIDTH_OF_BULLET" : 15,
+        "HEIGHT_OF_BULLET" : 25,
+        "VELOCITY_OF_BULLET" : 500
+    },
+    "enemy":
+    {
+        "SPEED_OF_ENEMY" : 150,
+        "DELAY_BETWEEN_SHOTS_ENEMIES" : 1.5,
+        "MARGIN_OF_ENEMIES_X": 40,
+        "MARGIN_OF_ENEMIES_Y" : 50,
+        "WIDTH_OF_ENEMY":70,
+        "HEIGHT_OF_ENEMY" : 70,
+        "MARGIN_BETWEEN_ENEMIES_X":20,
+        "MARGIN_BETWEEN_ENEMIES_Y" : 20,
+        "STEP_ENEMIES" : 20,
+        "SCORES_FIRST_ENEMY" : 40,
+        "SCORES_SECOND_ENEMY" : 60,
+        "SCORES_THIRD_ENEMY"  : 80,
+        "SCORES_FOURTH_ENEMY" : 100,
+        "SCORES_FIFTH_ENEMY"  : 150,
+        "SCORES_SIXTH_ENEMY" : 180,
+        "SCORES_SEVENTH_ENEMY" : 200,
+        "SCORES_EIGHTH_ENEMY" : 220,
+        "SCORES_NINTH_ENEMY" : 350,
+        "SCORES_TENTH_ENEMY" : 500
+    },
+"levels": {
+    "1": {
+        "layer1": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"]
+    },
+    "2": {
+        "layer1": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"],
+        "layer2": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"]
+    },
+    "3": {
+        "layer1": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"],
+        "layer2": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"],
+        "layer3": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"],
+        "layer4": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"]
+    },
+    "4": {
+        "layer1": ["SecondEnemy", "SecondEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "SecondEnemy", "FirstEnemy", "FirstEnemy"],
+        "layer2": ["SecondEnemy", "SecondEnemy", "SecondEnemy", "FirstEnemy", "FirstEnemy", "SecondEnemy", "SecondEnemy", "FirstEnemy"]
+    },
+    "5": {
+        "layer1": ["SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy"],
+        "layer2": ["ThirdEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "ThirdEnemy"],
+        "layer3": ["ThirdEnemy", "ThirdEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "SecondEnemy", "ThirdEnemy"]
+    },
+    "6": {
+        "layer1": ["ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy"],
+        "layer2": ["ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "SecondEnemy", "SecondEnemy", "ThirdEnemy", "ThirdEnemy", "SecondEnemy"],
+        "layer3": ["FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy"]
+    },
+    "7": {
+        "layer1": ["FourthEnemy", "FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "FourthEnemy", "ThirdEnemy"],
+        "layer2": ["FourthEnemy", "FourthEnemy", "FourthEnemy", "FourthEnemy", "FourthEnemy", "ThirdEnemy", "FourthEnemy"],
+        "layer3": ["ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "ThirdEnemy", "SecondEnemy", "ThirdEnemy", "SecondEnemy"]
+    },
+    "8": {
+        "layer1": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy", "FourthEnemy", "FifthEnemy", "FifthEnemy", "FourthEnemy"],
+        "layer2": ["FifthEnemy", "FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy", "FifthEnemy", "FourthEnemy"],
+        "layer3": ["FourthEnemy", "FourthEnemy", "FourthEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy"]
+    },
+    "9": {
+        "layer1": ["FifthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy"],
+        "layer2": ["FifthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy"],
+        "layer3": ["FourthEnemy", "FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy"]
+    },
+    "10": {
+        "layer1": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy"],
+        "layer2": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FourthEnemy", "SixthEnemy", "FifthEnemy", "FourthEnemy"],
+        "layer3": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy"],
+        "layer4": ["FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy"]
+    },
+    "11": {
+        "layer1": ["SixthEnemy", "SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "SixthEnemy", "SixthEnemy", "FifthEnemy"],
+        "layer2": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy"],
+        "layer3": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy"],
+        "layer4": ["FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy"]
+    },
+    "12": {
+        "layer1": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy", "SixthEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy"],
+        "layer2": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "SeventhEnemy", "FifthEnemy"],
+        "layer3": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy"],
+        "layer4": ["FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy"]
+    },
+    "13": {
+        "layer1": ["SeventhEnemy", "SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy"],
+        "layer2": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy", "FifthEnemy", "SeventhEnemy", "FifthEnemy"],
+        "layer3": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy", "FourthEnemy"],
+        "layer4": ["FourthEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy", "FourthEnemy", "ThirdEnemy", "ThirdEnemy"]
+    },
+    "14": {
+        "layer1": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy", "SeventhEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy"],
+        "layer2": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy", "EighthEnemy", "SixthEnemy"],
+        "layer3": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "SixthEnemy", "FifthEnemy"],
+        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy"]
+    },
+    "15": {
+        "layer1": ["EighthEnemy", "EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy", "EighthEnemy", "EighthEnemy"],
+        "layer2": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy", "SixthEnemy", "EighthEnemy", "SeventhEnemy"],
+        "layer3": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy", "SixthEnemy", "FifthEnemy"],
+        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy"]
+    },
+    "16": {
+        "layer1": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "EighthEnemy","NinthEnemy", "NinthEnemy"],
+        "layer2": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy","NinthEnemy", "NinthEnemy"],
+        "layer3": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy","SeventhEnemy", "SeventhEnemy"],
+        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy","FifthEnemy", "FifthEnemy"]
+    },
+    "17": {
+        "layer1": ["NinthEnemy", "NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy"],
+        "layer2": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "SeventhEnemy"],
+        "layer3": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy"],
+        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy"]
+    },
+    "18": {
+        "layer1": ["FinalEnemy", "FinalEnemy", "NinthEnemy", "NinthEnemy"],
+        "layer2": ["FinalEnemy", "FinalEnemy", "NinthEnemy", "EighthEnemy"],
+        "layer3": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy"],
+        "layer4": ["SixthEnemy", "SixthEnemy", "FifthEnemy"]
+    },
+    "19": {
+        "layer1": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer2": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer3": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy"],
+        "layer4": ["SixthEnemy", "SixthEnemy", "FifthEnemy"]
+    },
+    "20": {
+        "layer1": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer2": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer3": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer4": ["FinalEnemy", "FinalEnemy", "FinalEnemy"]
     }
-
-    
+}
 }

@@ -4,7 +4,6 @@ from .MovingI import MovingI
 from .Guns.FirstGun import FirstGun
 from .Guns.SecondGun import SecondGun
 from .Guns.ThirdGun import ThirdGun
-import abc
 
 class Entity(pygame.sprite.Sprite,MovingI):
     
@@ -14,7 +13,7 @@ class Entity(pygame.sprite.Sprite,MovingI):
         self.hp = hp
         self.image = img
         self.score = 0
-        self.image.set_colorkey('white')
+        self.image.set_colorkey('black')
         self.rect = self.image.get_rect()
         
     @property

@@ -1,7 +1,8 @@
-from .settings import *
+import pygame
 
 class GameOver:
-    def __init__(self, level):
+    def __init__(self, level,data):
+        self.data = data
         self.level = level
         self.screen = level.screen
         self.font = pygame.font.Font(None, 50)
@@ -14,10 +15,10 @@ class GameOver:
         top_score_text = self.font.render(f"Top Score: {self.level.top_score}", True, 'green')
         leave_text = self.font.render("To leave press Enter",True,'white')
 
-        game_over_rect = game_over_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 100))
-        score_rect = score_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 50))
-        top_score_rect = top_score_text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-        leave_text_rect = leave_text.get_rect(center = (WIDTH//2,100))
+        game_over_rect = game_over_text.get_rect(center=(self.data['WIDTH'] // 2, self.data['HEIGHT'] // 2 - 100))
+        score_rect = score_text.get_rect(center=(self.data['WIDTH'] // 2, self.data['HEIGHT'] // 2 - 50))
+        top_score_rect = top_score_text.get_rect(center=(self.data['WIDTH'] // 2, self.data['HEIGHT'] // 2))
+        leave_text_rect = leave_text.get_rect(center = (self.data['WIDTH']//2,100))
 
         self.screen.blit(game_over_text, game_over_rect)
         self.screen.blit(score_text, score_rect)
@@ -38,15 +39,15 @@ class GameOver:
         new_high_text = self.font.render("NEW HIGH SCORE!", True, 'gold')
         enter_name_text = self.font.render("Enter Your Name:", True, 'white')
 
-        new_high_rect = new_high_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 100))
-        enter_name_rect = enter_name_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 150))
+        new_high_rect = new_high_text.get_rect(center=(self.data['WIDTH'] // 2, self.data['HEIGHT'] // 2 + 100))
+        enter_name_rect = enter_name_text.get_rect(center=(self.data['WIDTH'] // 2, self.data['HEIGHT'] // 2 + 150))
 
         self.screen.blit(new_high_text, new_high_rect)
         self.screen.blit(enter_name_text, enter_name_rect)
 
         name = ""
         input_active = True
-        input_rect = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 + 200, 200, 50)
+        input_rect = pygame.Rect(self.data['WIDTH'] // 2 - 100, self.data['HEIGHT'] // 2 + 200, 200, 50)
         input_color = 'white'
 
         while input_active:

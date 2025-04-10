@@ -19,26 +19,24 @@ from Collisions.CollisionPlEg import CollisionPlEg
 
 from Obstacles.ObstacleGroup import ObstacleGroup
 
+import random
+
 class Level:
     
     def __init__(self,display:pygame.surface.Surface,top_score,data): 
         self.data = data
-        self.setup(display,top_score)
-        
-    def setup(self,display:pygame.surface.Surface,top_score):
         self.top_score = top_score
         self.all_scores = 0
         self.temp_scores = 0
         self.level = 1
         self.keep_running = True
-        
         self.screen = display
         self.score_font = pygame.font.Font(None,40)
         self.hp_font = pygame.font.Font(None,40)
         
         self.name = None
 
-        self.game_over = GameOver(self)
+        self.game_over = GameOver(self,self.data)
         
         self._create_collisions()
         self._create_groups()
@@ -58,8 +56,8 @@ class Level:
         
         self.obstacle_group = ObstacleGroup(data = self.data)
         
-        self.enemy_sprites = EnemyGroup(bm=self.bm_enemy)
-        self.enemy_loader = EnemyLoader(bm=self.bm_enemy)
+        self.enemy_sprites = EnemyGroup(bm=self.bm_enemy,data=self.data)
+        self.enemy_loader = EnemyLoader(bm=self.bm_enemy,data=self.data)
         
         self.player_sprite = PlayerGroup()
     
@@ -72,9 +70,6 @@ class Level:
         self.collider_bmobs = CollisionBMObstacle()
         self.colliderpbonus = CollisionPBonus()
         self.collider_pleg = CollisionPlEg()   
-
-    def recieve_name(self,name):
-        self.name = name
 
     def _collisions(self):
         self.collider_bmbm.collision(self.bm_enemy,self.bm_player)
@@ -91,7 +86,7 @@ class Level:
         if scores:
             self.temp_scores += scores
             self.all_scores += scores
-        if pos and self.temp_scores>=100:
+        if pos and self.temp_scores>=250 and random.randint(0,100)>70:
             self.bonus_group.add(Bonus(self.bonus_group,pos=pos,data=self.data))
             self.temp_scores %= 250
     
@@ -100,7 +95,12 @@ class Level:
         self.screen.blit(scores_s,(0,0))
         
         hp_s = self.hp_font.render(f"HP:{self.player_sprite.get_hp()}",True,'brown')
-        self.screen.blit(hp_s,(self.data['WIDTH']-100,self.data['HEIGHT']-100))    
+        hp_s_rect = hp_s.get_rect(bottomleft = (0,self.data['HEIGHT']))
+        self.screen.blit(hp_s,hp_s_rect)    
+        
+        level_s = self.hp_font.render(f"Level:{self.level-1}",True,'brown')
+        level_s_rect = level_s.get_rect(topright = (self.data['WIDTH'],0))
+        self.screen.blit(level_s,level_s_rect)
     
     def update(self,dt:float):
         self.screen.fill('black')

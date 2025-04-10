@@ -16,13 +16,15 @@ class Menu:
         self.states = ["Играть","Справка","Таблица записей","Выход"]
         self.state = 'Меню'
         self.buttons = []
-        self.table = TableRecords(self.screen,self.db.get_all_players()[::-1][:10],self.data)
+        self.table_up_to_date = False
+        self.table = TableRecords(self.screen,self.data)
         for i,state in enumerate(self.states):
             self.buttons.append(MenuButton(state,200,80,(self.data['WIDTH']/4,(i+1)*100)))
             
     def add_record(self,new_name,new_score):
         if new_name:
             self.db.add_player(new_name,new_score)
+            self.table_up_to_date = False
         
     def input(self):
         for i,button in enumerate(self.buttons):
@@ -49,6 +51,9 @@ class Menu:
             pygame.quit()
             sys.exit()
         elif self.state == 'Таблица записей':
+            if not self.table_up_to_date:
+                self.table.update_records(self.db.get_all_players()[::-1][:10])
+                self.table_up_to_date = True
             self.table.update()
             if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 self.state = "Меню"
