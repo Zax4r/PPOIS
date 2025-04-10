@@ -1,0 +1,31 @@
+{
+    "HEIGHT":640,
+    "WIDTH":1000,
+    "obstacles":
+    {
+        "BLOCK_SIZE" : 10,
+        "GAP_BETWEEN_OBSTACLES" : 250,
+        "START_HEIGHT_OBSTACLES" : 500,
+        "MARGIN_OBSTACLE" : 50
+    },
+    "table":
+    {
+        "Y_GAP":50,
+        "X_MARGIN":500,
+        "Y_MARGIN":100 
+    },
+    "bonus":
+    {
+        "SPEED_OF_BONUS":400
+    },
+    "player":
+    {
+        "HEIGHT_OF_PLAYER" : 60,
+        "WIDTH_OF_PLAYER" : 60,
+        "SPEED_OF_PLAYER" : 600,
+        "HP_PLAYER" : 3,
+        "DELAY_BETWEEN_SHOTS" : 0.5
+    }
+
+    
+}

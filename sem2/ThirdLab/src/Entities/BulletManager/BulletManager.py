@@ -1,4 +1,4 @@
-from  ..settings import *
+from  .settings import *
 from .BulletManagerI import BulletManagerI
 
 class BulletManager(BulletManagerI):

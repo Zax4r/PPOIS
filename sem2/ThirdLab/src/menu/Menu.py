@@ -1,20 +1,24 @@
-from MenuUtils.MenuButton  import MenuButton
-from MenuUtils.PlayerDatabase import PlayerDatabase
-from MenuUtils.TableRecords import TableRecords
-from settings import *
+from .MenuUtils.MenuButton  import MenuButton
+from .MenuUtils.PlayerDatabase import PlayerDatabase
+from .MenuUtils.TableRecords import TableRecords
+import pygame
 import sys
 
 class Menu:
     
-    def __init__(self,screen):
+    def __init__(self,screen,data):
+        self.data = data
         self.db = PlayerDatabase()
+        full_path = './graphics/menu/BG.png'
+        self.bg = pygame.image.load(full_path)
+        self.bg = pygame.transform.scale(self.bg,(self.data['WIDTH'],self.data['HEIGHT']))
         self.screen = screen
         self.states = ["Играть","Справка","Таблица записей","Выход"]
         self.state = 'Меню'
         self.buttons = []
-        self.table = TableRecords(self.screen,self.db.get_all_players()[::-1][:10])
+        self.table = TableRecords(self.screen,self.db.get_all_players()[::-1][:10],self.data)
         for i,state in enumerate(self.states):
-            self.buttons.append(MenuButton(state,200,80,(WIDTH/4,(i+1)*100)))
+            self.buttons.append(MenuButton(state,200,80,(self.data['WIDTH']/4,(i+1)*100)))
             
     def add_record(self,new_name,new_score):
         if new_name:
@@ -35,7 +39,7 @@ class Menu:
             return 0
     
     def update(self):
-        self.screen.fill('grey')
+        self.screen.blit(self.bg,(0,0))
         
         if self.state == 'Меню':
             self.input()

@@ -3,7 +3,7 @@ import sqlite3
 class PlayerDatabase:
 
     def __init__(self):
-        self.db_name = 'MenuUtils/database/players.db'
+        self.db_name = 'menu/MenuUtils/database/players.db'
         self._create_table()
 
     def _create_table(self):
@@ -31,7 +31,7 @@ class PlayerDatabase:
             connection = sqlite3.connect(self.db_name)
             cursor = connection.cursor()
 
-            insert_query = "INSERT INTO players (name, score) VALUES (?, ?);"
+            insert_query = "INSERT INTO players (name, score) VALUES (?, ?)"
             cursor.execute(insert_query, (name, score))
             connection.commit()
 
@@ -45,7 +45,7 @@ class PlayerDatabase:
         try:
             connection = sqlite3.connect(self.db_name)
             cursor = connection.cursor()
-            select_query = "SELECT name, score FROM players;"
+            select_query = "SELECT name, score FROM players"
             cursor.execute(select_query)
             players = cursor.fetchall()
 

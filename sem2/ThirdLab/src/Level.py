@@ -1,4 +1,4 @@
-from settings import *
+from Directions import *
 
 from Entities.Player.Player import Player
 from Entities.Player.PlayerGroup import PlayerGroup
@@ -21,7 +21,8 @@ from Obstacles.ObstacleGroup import ObstacleGroup
 
 class Level:
     
-    def __init__(self,display:pygame.surface.Surface,top_score): 
+    def __init__(self,display:pygame.surface.Surface,top_score,data): 
+        self.data = data
         self.setup(display,top_score)
         
     def setup(self,display:pygame.surface.Surface,top_score):
@@ -42,7 +43,7 @@ class Level:
         self._create_collisions()
         self._create_groups()
         
-        self.player_sprite.add(Player(self.player_sprite,bm = self.bm_player))
+        self.player_sprite.add(Player(self.player_sprite,bm = self.bm_player,data = self.data))
     
     def _load_level(self):
         if not len(self.enemy_sprites.sprites()):
@@ -55,7 +56,7 @@ class Level:
         
         self.bonus_group = pygame.sprite.Group()
         
-        self.obstacle_group = ObstacleGroup()
+        self.obstacle_group = ObstacleGroup(data = self.data)
         
         self.enemy_sprites = EnemyGroup(bm=self.bm_enemy)
         self.enemy_loader = EnemyLoader(bm=self.bm_enemy)
@@ -90,8 +91,8 @@ class Level:
         if scores:
             self.temp_scores += scores
             self.all_scores += scores
-        if pos and self.temp_scores>=250:
-            self.bonus_group.add(Bonus(self.bonus_group,pos=pos))
+        if pos and self.temp_scores>=100:
+            self.bonus_group.add(Bonus(self.bonus_group,pos=pos,data=self.data))
             self.temp_scores %= 250
     
     def draw_text(self):
@@ -99,7 +100,7 @@ class Level:
         self.screen.blit(scores_s,(0,0))
         
         hp_s = self.hp_font.render(f"HP:{self.player_sprite.get_hp()}",True,'brown')
-        self.screen.blit(hp_s,(WIDTH-100,HEIGHT-100))    
+        self.screen.blit(hp_s,(self.data['WIDTH']-100,self.data['HEIGHT']-100))    
     
     def update(self,dt:float):
         self.screen.fill('black')

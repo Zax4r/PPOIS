@@ -4,9 +4,9 @@ from .settings import *
 
 class EnemyI(Entity):
     
-    def __init__(self, *groups,bm,hp,img,score):
+    def __init__(self, *groups,bm,img,score):
         img = pygame.transform.scale(img,(WIDTH_OF_ENEMY,HEIGHT_OF_ENEMY))
-        super().__init__(*groups,bm=bm,hp=hp,img=img)
+        super().__init__(*groups,bm=bm,hp=1,img=img)
         self.score = score
         self.aim = Directions.DOWN
 

@@ -1,4 +1,4 @@
-from settings import *
+from Directions import *
 from ..BulletManager.BulletManagerI import BulletManagerI
 import abc
 

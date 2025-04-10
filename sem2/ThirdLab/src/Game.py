@@ -1,7 +1,9 @@
 import sys
+import json
 from Level import Level
-from Menu import Menu
-from settings import *
+from menu.Menu import Menu
+import pygame
+from enum import Enum
 
 class States(Enum):
     GAME = 1
@@ -12,13 +14,17 @@ class Game:
     
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((WIDTH,HEIGHT))
+        
+        with open('settings.json','r') as file:
+            self.data = json.load(file)
+            
+        self.screen = pygame.display.set_mode((self.data['WIDTH'],self.data['HEIGHT']))
         pygame.display.set_caption("ЗАЛУПА ЕЖА")
         self.clock = pygame.time.Clock()
         self.state = States.MENU
         self.running = True
         self.time = pygame.time.Clock()
-        self.menu = Menu(self.screen)
+        self.menu = Menu(self.screen,self.data)
         
     def run(self):
         while self.running:
@@ -28,13 +34,15 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    sys.exit()
                     self.running = False
+                    
             
             if self.state is States.GAME:  
                 self.new_name,self.new_score = self.level.update(dt)
                 if self.new_name is not None:
                     self.state = States.MENU
-                    self.menu = Menu(self.screen)
+                    self.menu = Menu(self.screen,self.data)
                     self.menu.add_record(self.new_name,self.new_score)
         
             elif self.state is States.MENU:
@@ -42,7 +50,7 @@ class Game:
                 if self.start_game:
                     self.top_score = self.menu.get_top()
                     self.state = States.GAME
-                    self.level = Level(self.screen,self.top_score)
+                    self.level = Level(self.screen,self.top_score,self.data)
                     self.start_game = False
                     
             pygame.display.update()
