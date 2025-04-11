@@ -22,9 +22,13 @@ class Entity(pygame.sprite.Sprite,MovingI):
     
     def update_hp(self,dmg):
         self.hp -= dmg   
+        music = pygame.mixer.Sound('./audio/explosion.wav')
+        music.set_volume(0.15)
+        music.play()
     
     def get_status(self):
         return self.hp > 0
+    
     
         
     

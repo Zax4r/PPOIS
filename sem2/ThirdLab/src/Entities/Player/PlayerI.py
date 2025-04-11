@@ -16,3 +16,6 @@ class PlayerI(Entity,InputI):
     def update_image(self, img):
         img = pygame.transform.scale(img,(self.data['player']['WIDTH_OF_PLAYER'],self.data['player']['HEIGHT_OF_PLAYER']))
         self.image = img
+        self.mask = pygame.mask.from_surface(self.image)
+        self.mask = self.mask.to_surface()
+        self.mask.set_colorkey('black')

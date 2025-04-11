@@ -20,9 +20,6 @@ class CollisionBmEnm(Collision):
     def work_with_collision(self, sprite1, sprite2, first, second):
         first.remove(sprite1)
         sprite2.update_hp(sprite1.dmg)
-        music = pygame.mixer.Sound('./audio/explosion.wav')
-        music.set_volume(0.15)
-        music.play()
         if not sprite2.get_status():
             second.remove(sprite2)
             pos,scores = sprite2.rect.center,sprite2.score

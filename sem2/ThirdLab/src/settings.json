@@ -140,35 +140,35 @@
         "layer3": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy", "FifthEnemy", "SixthEnemy", "FifthEnemy"],
         "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy", "FourthEnemy"]
     },
-    "16": {
-        "layer1": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "EighthEnemy","NinthEnemy", "NinthEnemy"],
-        "layer2": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy","NinthEnemy", "NinthEnemy"],
-        "layer3": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy","SeventhEnemy", "SeventhEnemy"],
-        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy","FifthEnemy", "FifthEnemy"]
+     "16": {
+        "layer1": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "EighthEnemy", "NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy"],
+        "layer2": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy", "NinthEnemy", "NinthEnemy", "EighthEnemy"],
+        "layer3": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy", "SeventhEnemy", "SeventhEnemy", "SixthEnemy"],
+        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy", "FifthEnemy", "FourthEnemy"]
     },
     "17": {
-        "layer1": ["NinthEnemy", "NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy"],
-        "layer2": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "SeventhEnemy"],
-        "layer3": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy"],
-        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy"]
+        "layer1": ["NinthEnemy", "NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "EighthEnemy", "NinthEnemy"],
+        "layer2": ["NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy"],
+        "layer3": ["SeventhEnemy", "SeventhEnemy", "SixthEnemy", "SixthEnemy", "SeventhEnemy"],
+        "layer4": ["FifthEnemy", "FifthEnemy", "FourthEnemy", "FifthEnemy"]
     },
     "18": {
-        "layer1": ["FinalEnemy", "FinalEnemy", "NinthEnemy", "NinthEnemy"],
-        "layer2": ["FinalEnemy", "FinalEnemy", "NinthEnemy", "EighthEnemy"],
-        "layer3": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy"],
-        "layer4": ["SixthEnemy", "SixthEnemy", "FifthEnemy"]
+        "layer1": ["FinalEnemy", "FinalEnemy", "NinthEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy"],
+        "layer2": ["FinalEnemy", "FinalEnemy", "NinthEnemy", "EighthEnemy", "EighthEnemy"],
+        "layer3": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy", "SixthEnemy"],
+        "layer4": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy"]
     },
     "19": {
-        "layer1": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
-        "layer2": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
-        "layer3": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy"],
-        "layer4": ["SixthEnemy", "SixthEnemy", "FifthEnemy"]
+        "layer1": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer2": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer3": ["EighthEnemy", "EighthEnemy", "SeventhEnemy", "SeventhEnemy", "SixthEnemy"],
+        "layer4": ["SixthEnemy", "SixthEnemy", "FifthEnemy", "FifthEnemy"]
     },
     "20": {
-        "layer1": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
-        "layer2": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
-        "layer3": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
-        "layer4": ["FinalEnemy", "FinalEnemy", "FinalEnemy"]
+        "layer1": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer2": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy","FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer3": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy","FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"],
+        "layer4": ["FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy", "FinalEnemy"]
     }
 }
 }

@@ -15,6 +15,9 @@ class EnemyI(Entity):
     def update_image(self, img):
         img = pygame.transform.scale(img,(self.data['enemy']['WIDTH_OF_ENEMY'],self.data['enemy']['HEIGHT_OF_ENEMY']))
         self.image = img
+        self.mask = pygame.mask.from_surface(self.image)
+        self.mask = self.mask.to_surface()
+        self.mask.set_colorkey('black')
     
     def import_assets(self,full_path):
         self.moving_animations = []
@@ -22,11 +25,13 @@ class EnemyI(Entity):
             for img_name in img_names:
                 self.moving_animations.append(pygame.image.load(full_path+f'/{img_name}'))
     
+
     def animate(self):
         self.animation_index+=0.03
         if self.animation_index >= len(self.moving_animations):
             self.animation_index = 0
         self.update_image(self.moving_animations[int(self.animation_index)])
+    
     
     def kill(self):
         super().kill()

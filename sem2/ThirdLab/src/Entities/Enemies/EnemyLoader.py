@@ -1,6 +1,6 @@
 from .EnemyGroupI import EnemyGroupI
 from .EnemiesLayer import EnemiesLayer
-from .levels import *
+from .enemies_dict import *
 
 class EnemyLoader:
     
