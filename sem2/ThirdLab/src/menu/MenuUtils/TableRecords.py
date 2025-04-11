@@ -11,8 +11,8 @@ class TableRecords:
         self.font = pygame.font.Font(None,40)
     
     def _draw(self):
-        leave_surf = self.font.render('Чтобы выйти нажмите ESC',False,'grey')
-        leave_surf_rect = leave_surf.get_rect(topleft = (0,0))
+        leave_surf = self.font.render('Чтобы выйти нажмите ESC',False,'white')
+        leave_surf_rect = leave_surf.get_rect(bottomleft = (0,self.data['HEIGHT']))
         self.screen.blit(leave_surf,leave_surf_rect)
         for i,record in enumerate(self.records):
             record_surf = self.font.render(f'{record[0]} : {record[1]}',False,'gold')

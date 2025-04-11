@@ -54,6 +54,13 @@
         "SCORES_NINTH_ENEMY" : 350,
         "SCORES_TENTH_ENEMY" : 500
     },
+
+    "info":{
+        "MARGIN_OF_PLATE_Y":200,
+        "MARGIN_OF_PLATE_X":100,
+        "GAP_BETWEEN_PLATES":70,
+        "GAP_BETWEEN_COLUMNS":400
+    },
 "levels": {
     "1": {
         "layer1": ["FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy", "FirstEnemy"]

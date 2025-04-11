@@ -1,6 +1,7 @@
 from .MenuUtils.MenuButton  import MenuButton
 from .MenuUtils.PlayerDatabase import PlayerDatabase
 from .MenuUtils.TableRecords import TableRecords
+from .MenuUtils.Info import Info
 import pygame
 import sys
 
@@ -16,6 +17,7 @@ class Menu:
         self.states = ["Играть","Справка","Таблица записей","Выход"]
         self.state = 'Меню'
         self.buttons = []
+        self.info = Info(self.screen,self.data)
         self.table_up_to_date = False
         self.table = TableRecords(self.screen,self.data)
         for i,state in enumerate(self.states):
@@ -27,6 +29,7 @@ class Menu:
             self.table_up_to_date = False
         
     def input(self):
+        self.screen.blit(self.bg,(0,0))
         for i,button in enumerate(self.buttons):
             button.draw(self.screen)
             self.pressed = button.check_click()
@@ -40,9 +43,7 @@ class Menu:
         except IndexError:
             return 0
     
-    def update(self):
-        self.screen.blit(self.bg,(0,0))
-        
+    def update(self):       
         if self.state == 'Меню':
             self.input()
         elif self.state == 'Играть':
@@ -52,13 +53,19 @@ class Menu:
             sys.exit()
         elif self.state == 'Таблица записей':
             if not self.table_up_to_date:
-                self.table.update_records(self.db.get_all_players()[::-1][:10])
+                self.table.update_records(self.db.get_all_players()[::-1][:5])
                 self.table_up_to_date = True
             self.table.update()
             if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 self.state = "Меню"
+        elif self.state == "Справка":
+            self.info.update()
+            if pygame.key.get_pressed()[pygame.K_ESCAPE]:
+                self.state = "Меню"
             
-        else:return False
+            
+        else:
+            return False
 
 
        
