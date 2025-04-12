@@ -1,6 +1,6 @@
 {
-    "HEIGHT":640,
     "WIDTH":1000,
+    "HEIGHT":640,
     "obstacles":
     {
         "BLOCK_SIZE" : 10,

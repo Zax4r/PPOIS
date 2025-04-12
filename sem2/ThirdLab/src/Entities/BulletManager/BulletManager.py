@@ -1,10 +1,10 @@
-from  .settings import *
 from .BulletManagerI import BulletManagerI
 
 class BulletManager(BulletManagerI):
     
-    def __init__(self, *sprites):
+    def __init__(self, *sprites,data):
         super().__init__(*sprites)
+        self.data = data
     
     def add_bullet(self,bullet):
         self.add(bullet)
@@ -16,6 +16,6 @@ class BulletManager(BulletManagerI):
         
     def delete_exited(self):
         for bullet in self.sprites():
-            if bullet.getrecty < 0 or bullet.getrecty > HEIGHT:
+            if bullet.getrecty < 0 or bullet.getrecty > self.data['HEIGHT']:
                 self.remove(bullet)
     

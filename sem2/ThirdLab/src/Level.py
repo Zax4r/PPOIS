@@ -49,8 +49,8 @@ class Level:
             self.level += 1
             
     def _create_groups(self):
-        self.bm_player = BulletManager()
-        self.bm_enemy = BulletManager()
+        self.bm_player = BulletManager(data = self.data)
+        self.bm_enemy = BulletManager(data = self.data)
         
         self.bonus_group = pygame.sprite.Group()
         
@@ -89,6 +89,10 @@ class Level:
         if pos and self.temp_scores>=250 and random.randint(0,100)>70:
             self.bonus_group.add(Bonus(self.bonus_group,pos=pos,data=self.data))
             self.temp_scores %= 250
+            
+        if self.enemy_sprites.find_lowest() > self.data['HEIGHT']:
+            self.player_sprite.update_hp(1)
+            self.enemy_sprites.remove_lowest()
     
     def draw_text(self):
         scores_s = self.score_font.render(f"Scores: {self.all_scores}",True,'yellow')

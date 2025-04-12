@@ -44,3 +44,18 @@ class EnemyGroup(EnemyGroupI):
     def step(self):
         for sprite in self.sprites():
             sprite.rect.centery += self.data['enemy']['STEP_ENEMIES']
+            
+    def find_lowest(self):
+        if self.sprites():
+            lowest = 0
+            self.lowest_sprite = self.sprites()[0]
+            for value in self.can_shoot.values():
+                if value.getrect.centery > lowest:
+                    lowest = value.getrect.centery
+                    self.lowest_sprite = value
+            return lowest
+        return 0
+    
+    def remove_lowest(self):
+        self.remove(self.lowest_sprite)
+    
