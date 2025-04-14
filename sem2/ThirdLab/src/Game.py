@@ -1,6 +1,6 @@
 import sys
 import json
-from Level import Level
+from level.Level import Level
 from menu.Menu import Menu
 import pygame
 from enum import Enum

@@ -71,4 +71,4 @@ class GameOver:
 
             pygame.display.flip()
 
-        return name
+        return name.strip()

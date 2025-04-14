@@ -1,23 +1,23 @@
 from Directions import *
 
-from Entities.Player.Player import Player
-from Entities.Player.PlayerGroup import PlayerGroup
-from Entities.BulletManager.BulletManager import BulletManager
-from Entities.Enemies.EnemyLoader import EnemyLoader
-from Entities.Enemies.EnemyGroup import EnemyGroup
+from .Entities.Player.Player import Player
+from .Entities.Player.PlayerGroup import PlayerGroup
+from .Entities.BulletManager.BulletManager import BulletManager
+from .Entities.Enemies.EnemyLoader import EnemyLoader
+from .Entities.Enemies.EnemyGroup import EnemyGroup
 
-from Bonus.Bonus import Bonus
+from .Bonus.Bonus import Bonus
 
-from GameOver.GameOver import GameOver
+from .GameOver.GameOver import GameOver
 
-from Collisions.CollisionBMBM import CollisionBMBM
-from Collisions.CollisionBMObstacle import CollisionBMObstacle
-from Collisions.CollisionBMEnm import CollisionBmEnm
-from Collisions.CollisionBMPl import CollisionBmPl
-from Collisions.CollisionPBonus import CollisionPBonus
-from Collisions.CollisionPlEg import CollisionPlEg
+from .Collisions.CollisionBMBM import CollisionBMBM
+from .Collisions.CollisionBMObstacle import CollisionBMObstacle
+from .Collisions.CollisionBMEnm import CollisionBmEnm
+from .Collisions.CollisionBMPl import CollisionBmPl
+from .Collisions.CollisionPBonus import CollisionPBonus
+from .Collisions.CollisionPlEg import CollisionPlEg
 
-from Obstacles.ObstacleGroup import ObstacleGroup
+from .Obstacles.ObstacleGroup import ObstacleGroup
 
 import random
 
