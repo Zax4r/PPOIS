@@ -21,8 +21,7 @@ class CollisionBmEnm(Collision):
         first.remove(sprite1)
         sprite2.update_hp(sprite1.dmg)
         if not sprite2.get_status():
-            second.remove(sprite2)
-            pos,scores = sprite2.rect.center,sprite2.score
+            pos,scores = sprite2.rect.center,sprite2.get_score()
             return pos,scores
         return None,None
             

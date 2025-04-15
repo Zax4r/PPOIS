@@ -25,7 +25,8 @@ class EnemyGroup(EnemyGroupI):
             rect = sprite.getrect
             self.minleft = min(self.minleft,rect.left)
             self.maxright = max(self.maxright,rect.right)
-            self.can_shoot[rect.centerx] = sprite
+            if sprite.get_status():
+                self.can_shoot[rect.centerx] = sprite
         
         if self.delay >= self.data['enemy']['DELAY_BETWEEN_SHOTS_ENEMIES'] and len(self.can_shoot.items()):
             key = random.choice(list(self.can_shoot.keys()))   

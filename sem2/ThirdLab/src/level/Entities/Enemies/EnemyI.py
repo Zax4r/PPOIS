@@ -10,14 +10,12 @@ class EnemyI(Entity):
         img = pygame.transform.scale(img,(data['enemy']['WIDTH_OF_ENEMY'],data['enemy']['HEIGHT_OF_ENEMY']))
         super().__init__(*groups,bm=bm,hp=1,img=img)
         self.score = score
+        self.time_death = -1
         self.aim = Directions.DOWN
 
     def update_image(self, img):
         img = pygame.transform.scale(img,(self.data['enemy']['WIDTH_OF_ENEMY'],self.data['enemy']['HEIGHT_OF_ENEMY']))
         self.image = img
-        self.mask = pygame.mask.from_surface(self.image)
-        self.mask = self.mask.to_surface()
-        self.mask.set_colorkey('black')
     
     def import_assets(self,full_path):
         self.moving_animations = []
@@ -31,8 +29,26 @@ class EnemyI(Entity):
         if self.animation_index >= len(self.moving_animations):
             self.animation_index = 0
         self.update_image(self.moving_animations[int(self.animation_index)])
+        if self.time_death >= 0:
+            self.time_death += 0.03
+            if self.time_death >= 1:
+                self.kill()
+                del self
     
+    def import_death_animations(self):
+        death_animations = []
+        path = "./graphics/death"
+        for _,_,img_names in walk(path):
+            for img_name in img_names:
+                img = pygame.image.load(path+f'/{img_name}')
+                death_animations.append(img)
+        return death_animations
+
     
-    def kill(self):
-        super().kill()
-        return self.score
+    def get_score(self):
+        if self.time_death < 0:
+            self.moving_animations = self.import_death_animations()
+            self.time_death = 0
+            self.animation_index = 0.5
+            return self.score
+        return 0
